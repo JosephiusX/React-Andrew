@@ -75,3 +75,19 @@ challange
 
     -only render the subtitle (and p tag) if subtitle exist - logical && operator
     -render new p tag - if options.length > 0 'Here are your options' 'no options'
+
+## 3.16 Events and Attributes
+
+in JSX
+
+    -class:
+        className
+
+    -React Dom Elements Docs:
+        https://reactjs.org/docs/dom-elements.html
+            -All Supported HTML Attributes is a good reference
+
+Challange:
+
+    -make button -1  - setup minusOne function and register - log 'minusOne'
+    -make reset button "reset" - setup reset function - log "reset"
