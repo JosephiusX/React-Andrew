@@ -61,3 +61,17 @@ Challange:
     -create app object title/subtitle
     -use title/subtitle in the template
     -render template
+
+## 3.12 Conditional Rendering in JSX
+
+    && operator
+        true && 'Some age'
+            returns: 'Some age'
+
+        false && 'Some age'
+            returns: false
+
+challange
+
+    -only render the subtitle (and p tag) if subtitle exist - logical && operator
+    -render new p tag - if options.length > 0 'Here are your options' 'no options'
