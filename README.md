@@ -40,3 +40,24 @@ not a bad time to add node modules to .gitignore
         babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
 this sets up babel so that it watches for changes in our src/app.js and translate it to our public/app.js
+
+## 3.10 Exploring ejs
+
+vs code extension babel es6/es7 is helpful as well as path intelisense
+
+CHALLANGE: Create a templateTwo var JSX expression
+
+    -div
+    -h1 -Andrew Mead
+    -p Age: 26
+    -p location: Philadelphia
+
+render template Two instead of template
+
+## 3.11 JSX Expressions
+
+Challange:
+
+    -create app object title/subtitle
+    -use title/subtitle in the template
+    -render template
