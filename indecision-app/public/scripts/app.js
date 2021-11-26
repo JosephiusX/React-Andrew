@@ -24,11 +24,12 @@ var onFormSubmit = function onFormSubmit(e) {
 
 var wipe = function wipe() {
 	app.options = [];
-
 	render();
 };
 
 var appRoot = document.getElementById('app');
+
+var numbers = [55, 101, 1000];
 
 var render = function render() {
 	var template = React.createElement(
@@ -59,6 +60,13 @@ var render = function render() {
 			{ onClick: wipe },
 			'Remove All'
 		),
+		app.options.map(function (option) {
+			return React.createElement(
+				'li',
+				{ key: option },
+				option
+			);
+		}),
 		React.createElement(
 			'ol',
 			null,

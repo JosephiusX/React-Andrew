@@ -153,3 +153,13 @@ this page gives a rundown of the event handlers available to us.
 
         - create "Remove All" button above list
         - on click -> wipe the array -> rerender
+
+## 19. Arrays in JSX
+
+JSX supports strings as well as numbers. It does not support objects, and it ignores booleans, null , and undefined.
+
+I can use JSX within an array. Each child of an array needs a unique identifier so that JSX can optomize the rendering process.
+
+        CHALLANGE:
+
+            - map over add.options getting back an array of lis (set key and text)

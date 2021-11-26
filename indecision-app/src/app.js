@@ -22,11 +22,12 @@ const onFormSubmit = e => {
 
 const wipe = () => {
 	app.options = [];
-
 	render();
 };
 
 const appRoot = document.getElementById('app');
+
+const numbers = [55, 101, 1000];
 
 const render = () => {
 	const template = (
@@ -36,6 +37,12 @@ const render = () => {
 			<p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
 			<p>{app.options.length}</p>
 			<button onClick={wipe}>Remove All</button>
+			{/*numbers.map(number => {
+				return <p key={number}>Number: {number}</p>;
+			})*/}
+			{app.options.map(option => (
+				<li key={option}>{option}</li>
+			))}
 			<ol>
 				<li>Item One</li>
 				<li>Item Two</li>
