@@ -41,7 +41,7 @@ not a bad time to add node modules to .gitignore
 
 this sets up babel so that it watches for changes in our src/app.js and translate it to our public/app.js
 
-## 3.10 Exploring ejs
+## 3.10 Exploring ejx
 
 vs code extension babel es6/es7 is helpful as well as path intelisense
 
@@ -51,6 +51,16 @@ CHALLANGE: Create a templateTwo var JSX expression
     -h1 -Andrew Mead
     -p Age: 26
     -p location: Philadelphia
+
+    - RECAP
+
+    - Adjacent JSX elements must be wrapped in an enclosing tag.
+
+when working with jsx I can only have a single root element.
+
+    - within '{}' in jsx javascript expressions can be placed
+
+JSX allows me to represent html in my javascript file wrapped un a div. In the html like language I can reference variables in the javascript code in the file.
 
 render template Two instead of template
 
@@ -70,6 +80,11 @@ Challange:
 
         false && 'Some age'
             returns: false
+
+        - conditional statements
+            true ? 'joseph' : 'Anonymos'
+
+the above translates : if the first name is true than output 'joseph', else output 'Anonymos
 
 challange
 
@@ -91,3 +106,22 @@ Challange:
 
     -make button -1  - setup minusOne function and register - log 'minusOne'
     -make reset button "reset" - setup reset function - log "reset"
+
+## 3.17 Manual Data Binding
+
+Challange:
+
+    -subtract 1 from count - render
+    -set count to 0 - render - render
+
+JSX does not have data binding built in
+
+    ?? what is data binding
+
+it would seem that data binding would refer to data to the web automatically updating when changes are made. React doesen't have data binding so we need to make a function to update our page when changes are made.
+
+    -create renderCounterApp() to solve this
+
+now when fn count() runs for instance, the first line incrimemts the count, and after the change is made programatically we run the renderCounterApp() fn to update the changes on the user end.
+
+Rerendering the entire app whenever a change is made would be an intensive way of handleing things. Thats why Reacts virtual dom algorithm knows to only update elements within the dom that have changed. No energy is wasted.
