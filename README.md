@@ -1,5 +1,16 @@
 # React-Andrew
 
+## Startup Reminder
+
+to run the react app on my machine for development purposes:
+
+        - In indecision-app dir run babel command in lesson 9:
+            babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+this tells babel to watch src/app.js and translate it to public/scripts/app.js
+
+        - open indx.html in the scripts folder in the public directory with live server.
+
 ## Section 3.7
 
 install live server
@@ -125,3 +136,20 @@ it would seem that data binding would refer to data to the web automatically upd
 now when fn count() runs for instance, the first line incrimemts the count, and after the change is made programatically we run the renderCounterApp() fn to update the changes on the user end.
 
 Rerendering the entire app whenever a change is made would be an intensive way of handleing things. Thats why Reacts virtual dom algorithm knows to only update elements within the dom that have changed. No energy is wasted.
+
+## 18. Forms and Inputs
+
+this page gives a rundown of the event handlers available to us.
+
+    -for the form we are going to use onSubmit={onFormSubmit} and create a function with that name
+
+    CHALLANGE:
+
+        - create render function that renders the new jsx
+        - call it right away
+        - call it after options array added to
+
+    CHALLANGE:
+
+        - create "Remove All" button above list
+        - on click -> wipe the array -> rerender
