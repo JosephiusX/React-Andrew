@@ -163,3 +163,11 @@ I can use JSX within an array. Each child of an array needs a unique identifier 
         CHALLANGE:
 
             - map over add.options getting back an array of lis (set key and text)
+
+        SOLUTION:
+
+            {app.options.map(option => (
+    			<li key={option}>{option}</li>
+    		))}
+
+## 20. Picking an Option

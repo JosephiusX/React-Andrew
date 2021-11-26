@@ -22,9 +22,15 @@ var onFormSubmit = function onFormSubmit(e) {
 	render();
 };
 
-var wipe = function wipe() {
+var onRemoveAll = function onRemoveAll() {
 	app.options = [];
 	render();
+};
+
+var onMakeDecision = function onMakeDecision() {
+	var randomNum = Math.floor(Math.random() * app.options.length);
+	var option = app.options[randomNum];
+	alert(option);
 };
 
 var appRoot = document.getElementById('app');
@@ -51,13 +57,13 @@ var render = function render() {
 			app.options.length > 0 ? 'Here are your options' : 'No options'
 		),
 		React.createElement(
-			'p',
-			null,
-			app.options.length
+			'button',
+			{ disabled: app.options.length <= 0 ? true : false, onClick: onMakeDecision },
+			'What should I do?'
 		),
 		React.createElement(
 			'button',
-			{ onClick: wipe },
+			{ onClick: onRemoveAll },
 			'Remove All'
 		),
 		app.options.map(function (option) {
