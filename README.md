@@ -171,3 +171,22 @@ I can use JSX within an array. Each child of an array needs a unique identifier 
     		))}
 
 ## 20. Picking an Option
+
+21. Build it: Visibility Toggle
+
+babel command for setting up babel:
+
+    babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+
+          CHALLANGE:
+
+              - h1 with title visibility toggle
+              - detail string
+              - button called hide details that hides details when clicked
+
+          SOLUTION:
+
+                build-it-visible.js
+
+
