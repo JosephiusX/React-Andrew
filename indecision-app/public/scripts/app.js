@@ -22,7 +22,12 @@ var Person = function () {
 	_createClass(Person, [{
 		key: 'getGreeting',
 		value: function getGreeting() {
-			return this.name + ' is ' + this.age + ' old';
+			return 'hello. I am ' + this.name + ' !';
+		}
+	}, {
+		key: 'getDiscription',
+		value: function getDiscription() {
+			return this.name + ' is ' + this.age + ' old.';
 		}
 	}]);
 
@@ -33,10 +38,13 @@ var Person = function () {
 
 
 var me = new Person('Andrew Mead', 30);
-console.log(me.getGreeting());
+console.log(me.getGreeting()); // hello. I am Andrew Mead !
+console.log(me.getDiscription(30)); // Andrew Mead is 30 old.
 
 var sister = new Person('Nicara', 36);
-console.log(sister.getGreeting());
+console.log(sister.getGreeting()); // hello. I am Nicara !
+console.log(sister.getDiscription()); // Nicara is 36 old.
 
 var noName = new Person(); // if we dont pass in a name the default that we specified above is used
-console.log(noName); // Person {name: 'anonymus'}
+console.log(noName.getGreeting()); // Person {name: 'anonymus'}
+console.log(noName.getDiscription()); // anonymus is 0 old.
