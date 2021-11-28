@@ -1,104 +1,42 @@
 'use strict';
 
-console.log('app.js is running');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// JSX - Javascript XML
-var app = {
-	title: 'Indecision App',
-	paragraph: 'Put your life in the hands of a computer',
-	options: []
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var onFormSubmit = function onFormSubmit(e) {
-	e.preventDefault(); // prevent full page refresh
+var Person = function () {
+	// es6 allows defaults to be added to paramiters incase one is not given
+	function Person() {
+		var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'anonymus';
+		var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-	var option = e.target.elements.option.value;
+		_classCallCheck(this, Person);
 
-	if (option) {
-		app.options.push(option);
-		e.target.elements.option.value = '';
+		this.name = name; // inside class methots 'this' refers to the class instance
+		this.age = age;
 	}
 
-	render();
-};
+	// method to run when explicitly called
 
-var onRemoveAll = function onRemoveAll() {
-	app.options = [];
-	render();
-};
 
-var onMakeDecision = function onMakeDecision() {
-	var randomNum = Math.floor(Math.random() * app.options.length);
-	var option = app.options[randomNum];
-	alert(option);
-};
+	_createClass(Person, [{
+		key: 'getGreeting',
+		value: function getGreeting() {
+			return this.name + ' is ' + this.age + ' old';
+		}
+	}]);
 
-var appRoot = document.getElementById('app');
+	return Person;
+}();
 
-var numbers = [55, 101, 1000];
+// we can make as many instances of the class as we want by assigning them to new variables
 
-var render = function render() {
-	var template = React.createElement(
-		'div',
-		null,
-		React.createElement(
-			'h1',
-			null,
-			app.title
-		),
-		app.subtite && React.createElement(
-			'p',
-			null,
-			app.subtitle
-		),
-		React.createElement(
-			'p',
-			null,
-			app.options.length > 0 ? 'Here are your options' : 'No options'
-		),
-		React.createElement(
-			'button',
-			{ disabled: app.options.length <= 0 ? true : false, onClick: onMakeDecision },
-			'What should I do?'
-		),
-		React.createElement(
-			'button',
-			{ onClick: onRemoveAll },
-			'Remove All'
-		),
-		app.options.map(function (option) {
-			return React.createElement(
-				'li',
-				{ key: option },
-				option
-			);
-		}),
-		React.createElement(
-			'ol',
-			null,
-			React.createElement(
-				'li',
-				null,
-				'Item One'
-			),
-			React.createElement(
-				'li',
-				null,
-				'Item Two'
-			)
-		),
-		React.createElement(
-			'form',
-			{ onSubmit: onFormSubmit },
-			React.createElement('input', { type: 'text', name: 'option' }),
-			React.createElement(
-				'button',
-				null,
-				'Add Option'
-			)
-		)
-	);
-	ReactDOM.render(template, appRoot);
-};
 
-render();
+var me = new Person('Andrew Mead', 30);
+console.log(me.getGreeting());
+
+var sister = new Person('Nicara', 36);
+console.log(sister.getGreeting());
+
+var noName = new Person(); // if we dont pass in a name the default that we specified above is used
+console.log(noName); // Person {name: 'anonymus'}

@@ -202,4 +202,14 @@ in his solution the button text changes as well depending on weather the text is
 
 React components allow us to take our big application and break it up into small pieces. For example we could have a component for the header, another for the user profile and a different component for signing in and handleing user interaction when the form is submitted.
 
-23. Thinking in React
+23.   Thinking in React
+
+24.   ES6 Classes: Part 1
+
+      -  Set up babel to use our es6-classes-1.js: babel src/playground/es6-classes-1.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+React components are made using classes
+
+        CHALLANGE:
+            - Setup constructor to take name and age (default to 0)
+            - getDiscription - Andrew Mead is 26 years old.
