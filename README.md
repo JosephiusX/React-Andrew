@@ -189,4 +189,11 @@ babel command for setting up babel:
 
                 build-it-visible.js
 
+in his solution the button text changes as well depending on weather the text is visible.
 
+        - easally solved by adding a turnary operator to the jsx button within brackets so that the button text changes appropriately based on the current visibility.
+
+        - switch back to app.js with babel:
+
+            - In indecision-app dir run babel command in lesson 9:
+            babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch

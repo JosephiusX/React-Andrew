@@ -8,26 +8,20 @@ let app = {
 	message: 'Now you can see this message',
 };
 
-// const messageStatus =
-
-const toggle = () => {
-	if (visible) {
-		visible = false;
-	} else {
-		visible = true;
-	}
-	render(); // need to render after each function
-};
-
 const render = () => {
-	const toggleApp = (
+	const jsx = (
 		<div>
 			<h1>{app.title}</h1>
-			<button onClick={toggle}>Hide the details</button>
+			<button onClick={toggle}>{visible ? 'Hide text' : 'Show text'}</button>
 			<p>{visible ? app.message : ''}</p>
 		</div>
 	);
-	ReactDOM.render(toggleApp, appRoot);
+	ReactDOM.render(jsx, appRoot);
 };
 
+// if statement converted to turnary operator
+const toggle = () => {
+	visible ? (visible = false) : (visible = true);
+	render();
+};
 render();
