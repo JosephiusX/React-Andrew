@@ -197,3 +197,7 @@ in his solution the button text changes as well depending on weather the text is
 
             - In indecision-app dir run babel command in lesson 9:
             babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+22. React Components
+
+React components allow us to take our big application and break it up into small pieces. For example we could have a component for the header, another for the user profile and a different component for signing in and handleing user interaction when the form is submitted.
