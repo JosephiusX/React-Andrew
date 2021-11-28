@@ -201,3 +201,5 @@ in his solution the button text changes as well depending on weather the text is
 22. React Components
 
 React components allow us to take our big application and break it up into small pieces. For example we could have a component for the header, another for the user profile and a different component for signing in and handleing user interaction when the form is submitted.
+
+23. Thinking in React
