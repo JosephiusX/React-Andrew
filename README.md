@@ -256,6 +256,14 @@ I can access the parent functionality agan by nameing a variable in the Student 
         CHALLANGE: Travler -> Person
 
             - Add support for home location
-            - Override getGreeting
+            - Override getGreeting()
             - 1. Hi. I am Andrew Mead. I'm visiting from Philadelphia.
             - 2. Hi I am andrew Mead
+
+26.   Creating a React Component
+
+          - first we cut contents from app.js and paste into new file in playground called jsx-indecision
+
+          - then we setup the babel command to run src/app.js:
+              babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+

@@ -1,153 +1,157 @@
-'use strict';
-
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var Header = function (_React$Component) {
+	_inherits(Header, _React$Component);
 
-var Person = function () {
-	// es6 allows defaults to be added to paramiters incase one is not given
-	function Person() {
-		var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'anonymus';
-		var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+	function Header() {
+		_classCallCheck(this, Header);
 
-		_classCallCheck(this, Person);
-
-		this.name = name; // inside class methots 'this' refers to the class instance
-		this.age = age;
+		return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
 	}
 
-	// method to run when explicitly called
-
-
-	_createClass(Person, [{
-		key: 'getGreeting',
-		value: function getGreeting() {
-			return 'hello. I am ' + this.name + '!';
-		}
-	}, {
-		key: 'getDescription',
-		value: function getDescription() {
-			return this.name + ' is ' + this.age + ' old.';
+	_createClass(Header, [{
+		key: "render",
+		value: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"h1",
+					null,
+					"Indecision"
+				),
+				React.createElement(
+					"h2",
+					null,
+					"Put your life in the hands of a computer"
+				)
+			);
 		}
 	}]);
 
-	return Person;
-}();
+	return Header;
+}(React.Component);
 
-var Student = function (_Person) {
-	_inherits(Student, _Person);
+var Action = function (_React$Component2) {
+	_inherits(Action, _React$Component2);
 
-	// here we need name and age from Person as well as the major peramiter
-	function Student(name, age, major) {
-		_classCallCheck(this, Student);
+	function Action() {
+		_classCallCheck(this, Action);
 
-		// defines name and age from person because it is extended to student
-		var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, name, age));
-
-		_this.major = major; // we define this because its unique to person
-		return _this;
+		return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
 	}
 
-	_createClass(Student, [{
-		key: 'hasMajor',
-		value: function hasMajor() {
-			return !!this.major;
-		}
-	}, {
-		key: 'getDescription',
-		value: function getDescription() {
-			var description = _get(Student.prototype.__proto__ || Object.getPrototypeOf(Student.prototype), 'getDescription', this).call(this);
-
-			if (this.hasMajor()) {
-				description += ' Their major is ' + this.major;
-			}
-			return description;
+	_createClass(Action, [{
+		key: "render",
+		value: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"button",
+					null,
+					"What should I do?"
+				)
+			);
 		}
 	}]);
 
-	return Student;
-}(Person);
+	return Action;
+}(React.Component);
 
-// MY SOLUTION - seems to work but seems i misunderstood the problem
-// class Travler extends Person {
-// 	constructor(name, age, location) {
-// 		super(name, age);
-// 		this.location = location;
-// 	}
+var Options = function (_React$Component3) {
+	_inherits(Options, _React$Component3);
 
-// 	homeLocation() {
-// 		return this.location;
-// 	}
+	function Options() {
+		_classCallCheck(this, Options);
 
-// 	getGreeting() {
-// 		return `Hi. I am ${this.name}. I'm visiting from ${this.homeLocation()}`;
-// 	}
-// }
-
-// COURSE SOLUTION:
-
-
-var Travler = function (_Person2) {
-	_inherits(Travler, _Person2);
-
-	function Travler(name, age, homeLocation) {
-		_classCallCheck(this, Travler);
-
-		var _this2 = _possibleConstructorReturn(this, (Travler.__proto__ || Object.getPrototypeOf(Travler)).call(this, name, age));
-
-		_this2.homeLocation = homeLocation;
-		return _this2;
+		return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
 	}
 
-	// overwrite parent method
-
-
-	_createClass(Travler, [{
-		key: 'getGreeting',
-		value: function getGreeting() {
-			// bring in parent method functionality back to be used along with new functionality
-			var greeting = _get(Travler.prototype.__proto__ || Object.getPrototypeOf(Travler.prototype), 'getGreeting', this).call(this);
-
-			if (this.homeLocation) {
-				greeting += ' I am visiting from ' + this.homeLocation + '.';
-			}
-
-			return greeting;
+	_createClass(Options, [{
+		key: "render",
+		value: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"h3",
+					null,
+					"Options"
+				),
+				React.createElement(
+					"ol",
+					null,
+					React.createElement(
+						"li",
+						null,
+						"First"
+					),
+					React.createElement(
+						"li",
+						null,
+						"Second"
+					),
+					React.createElement(
+						"li",
+						null,
+						"Third"
+					)
+				)
+			);
 		}
 	}]);
 
-	return Travler;
-}(Person);
+	return Options;
+}(React.Component);
 
-var me = new Student('Andrew Mead', 26, 'Computer Science');
-console.log(me.getGreeting());
+var AddOption = function (_React$Component4) {
+	_inherits(AddOption, _React$Component4);
 
-var other = new Student();
-console.log(other.getGreeting());
+	function AddOption() {
+		_classCallCheck(this, AddOption);
 
-var i = new Travler('Gramkracker', 33, 'Oakland');
-console.log(i.getGreeting());
+		return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+	}
 
-// const person = new Person(); // with this we can see that getDescription() works differently now when used Student as opposed to Person
-// console.log(person.getDescription());
+	_createClass(AddOption, [{
+		key: "render",
+		value: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"form",
+					null,
+					React.createElement("input", { type: "text", name: "" }),
+					React.createElement(
+						"button",
+						null,
+						"Add Option"
+					)
+				)
+			);
+		}
+	}]);
 
-// Previous Lecture
+	return AddOption;
+}(React.Component);
 
-// we can make as many instances of the class as we want by assigning them to new variables
-// const me = new Person('Andrew Mead', 30);
-// console.log(me.getGreeting()); // hello. I am Andrew Mead !
-// console.log(me.getDescription(30)); // Andrew Mead is 30 old.
+var jsx = React.createElement(
+	"div",
+	null,
+	React.createElement(Header, null),
+	React.createElement(Action, null),
+	React.createElement(Options, null),
+	React.createElement(AddOption, null)
+);
 
-// const sister = new Person('Nicara', 36);
-// console.log(sister.getGreeting()); // hello. I am Nicara !
-// console.log(sister.getDescription()); // Nicara is 36 old.
-
-// const noName = new Person(); // if we dont pass in a name the default that we specified above is used
-// console.log(noName.getGreeting()); // Person {name: 'anonymus'}
-// console.log(noName.getDescription()); // anonymus is 0 old.
+ReactDOM.render(jsx, document.getElementById('app'));
