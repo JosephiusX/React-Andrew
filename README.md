@@ -213,3 +213,37 @@ React components are made using classes
         CHALLANGE:
             - Setup constructor to take name and age (default to 0)
             - getDiscription - Andrew Mead is 26 years old.
+
+25. ES6 Classes: Part II
+
+We can create a subclass of person called Students which is a person with a name and age, but we also want to track a major for the student.
+
+        - we make a new class called Student
+        - we extends the use of the Person methods to be used in students(students are people!)
+        - then we make methods in Student for our student spacific needs
+
+Before adding any methods to student we can already use it exactly like the Person class due to those properties being extended from Person to Student
+
+        -using logical not operator
+
+            ! true:
+                false
+
+            ! false:
+                true
+
+            !! true
+                true
+
+            !! false
+                false
+
+a single '!' (not operator) will flip the value of a boolean. '!!' flips the value twice.
+
+we know that this.major will either be a string or undefined. so we flip it twice.
+
+    ?? im not understanding the utility of this in this case
+
+the result however is that when I run the method on students it returns true if a major is included and false if the student dosent have a major in the paramiters
+
+if I use getDiscription() in the student class it works just like in the parent class that it is inherited from. I can override that by making a new method in Student with the same getDiscription() name.
