@@ -243,7 +243,19 @@ a single '!' (not operator) will flip the value of a boolean. '!!' flips the val
 we know that this.major will either be a string or undefined. so we flip it twice.
 
     ?? im not understanding the utility of this in this case
+    ** The point is that instead of returning the variable, it returns either false or true, it also turns null and undefined to false.
 
 the result however is that when I run the method on students it returns true if a major is included and false if the student dosent have a major in the paramiters
 
 if I use getDiscription() in the student class it works just like in the parent class that it is inherited from. I can override that by making a new method in Student with the same getDiscription() name.
+
+Now getDiscription() is different from the parent.
+
+I can access the parent functionality agan by nameing a variable in the Student getDistribution() method and setting it equal to super.getDescription(). I have overwritten it and now have included it superemposed from the parent to be used along with new functionality.
+
+        CHALLANGE: Travler -> Person
+
+            - Add support for home location
+            - Override getGreeting
+            - 1. Hi. I am Andrew Mead. I'm visiting from Philadelphia.
+            - 2. Hi I am andrew Mead
