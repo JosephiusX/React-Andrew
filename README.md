@@ -305,3 +305,19 @@ I can access the parent functionality agan by nameing a variable in the Student 
             }
 
 we learned that our components can render jsx meaning they can render other components. That allows us to create the nested structure we need for our applications.
+
+28. Component Props
+
+props are the core of how components communicate with each other
+
+        - similar to html props as they are key value pairs.
+
+        EXAMPLE:
+            - we can add "title="Test value" to <Header /> in IndecisionApp
+
+            - in header we can use it by using this before the return statememt:
+                console.log(this.props)
+
+The value in the nested <Header /> are logged to the console
+
+left off at 2:34
