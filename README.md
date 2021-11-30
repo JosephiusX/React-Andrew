@@ -253,7 +253,7 @@ Now getDiscription() is different from the parent.
 
 I can access the parent functionality agan by nameing a variable in the Student getDistribution() method and setting it equal to super.getDescription(). I have overwritten it and now have included it superemposed from the parent to be used along with new functionality.
 
-        CHALLANGE: Travler -> Person
+            CHALLANGE: Travler -> Person
 
             - Add support for home location
             - Override getGreeting()
@@ -267,3 +267,41 @@ I can access the parent functionality agan by nameing a variable in the Student 
           - then we setup the babel command to run src/app.js:
               babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+27.   Nesting Components
+
+            -  make React Component IndecisionApp
+            -  place in the div from const jsx.
+            -  delete const jsx
+            -  add '<IndecisionApp />' to the render function at the bottem of the code
+
+      CHALLANGE:
+
+            - Create brand new component called option with text 'Option component here'
+
+      SOLUTION:
+
+            - create class component:
+
+            class Option extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <p>this is an option</p>
+                        </div>
+                    );
+                }
+            }
+
+            - then nest It within Options div:
+
+            class Options extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <Option />
+                        </div>
+                    );
+                }
+            }
+
+we learned that our components can render jsx meaning they can render other components. That allows us to create the nested structure we need for our applications.
