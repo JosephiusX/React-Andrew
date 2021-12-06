@@ -398,3 +398,9 @@ instead of having global functions for our events we can add them as methods to 
                 );
             }
         }
+
+30. Method Binding
+
+we are using bind to reset the context
+
+?? check MDN for more useful things I can do with bind

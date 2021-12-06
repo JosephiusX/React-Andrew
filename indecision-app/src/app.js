@@ -3,6 +3,7 @@ class IndecisionApp extends React.Component {
 		const title = 'Indecision';
 		const subtitle = 'Put your life in the hands of a computer';
 		const options = ['Thing one', 'Thing two', 'Thing four'];
+
 		return (
 			<div>
 				<Header title={title} subtitle={subtitle} />
@@ -39,16 +40,21 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleRemoveAll = this.handleRemoveAll.bind(this);
+	}
 	handleRemoveAll() {
-		alert('handleRemoveAll');
+		console.log(this.props.options);
+		// alert('handleRemoveAll');
 	}
 	render() {
 		return (
 			<div>
+				<button onClick={this.handleRemoveAll}>Remove All</button>
 				{this.props.options.map(option => (
 					<Option key={option} optionText={option} />
 				))}
-				<button onClick={this.handleRemoveAll}>Remove All</button>
 			</div>
 		);
 	}
