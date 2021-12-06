@@ -457,3 +457,7 @@ we learned that our state is an object with key value pairs. we define our initi
             }
 
             ReactDOM.render(<Counter />, document.getElementById('app'));
+
+33.   Adding State to counter App: Part II
+
+            - In the constructor fn set this. state = {}
