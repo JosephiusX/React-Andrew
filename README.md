@@ -404,3 +404,17 @@ instead of having global functions for our events we can add them as methods to 
 we are using bind to reset the context
 
 ?? check MDN for more useful things I can do with bind
+
+31. What Is Component State?
+
+state allows our components to manage data so that we dont have to re-render when changes are made
+
+        - setup default state object
+        - the component is rendered with default state values *
+        - state changes based on event
+        - Component re-rendered using new state values
+        - ??Start at 3
+
+component state is essential for interactive applications
+
+we learned that our state is an object with key value pairs. we define our initial data and that allows us to get that rendered to the screen(if count is set to 0 it starts at 0). we can change the state object based off of an event.
