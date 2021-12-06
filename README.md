@@ -344,3 +344,57 @@ now we can use this.props.title in jsx. we have successfully used our first prop
 this solves it but to go further we can just pass in <Option /> instead
 
 what we learned is that when we create instances of react components we can also choose to pass data into it that looks very much like html attributes (key value pairs) key is a string and the value can be anything we like, string number or any other js expression. Then we can use that information with this.props. this gives us oneway communication.
+
+29. Events & Methods
+
+instead of having global functions for our events we can add them as methods to our components
+
+    CHALLANGE:
+        - Add Remove All button to Options component
+        - Setup handleRemoveAll -> alert some message
+        - setup onClick to fire method
+
+    SOLUTION:
+        class Options extends React.Component {
+            handleRemoveAll() {
+                alert('handleRemoveAll');
+            }
+            render() {
+                return (
+                    <div>
+                        {this.props.options.map(option => (
+                            <Option key={option} optionText={option} />
+                        ))}
+                        <button onClick={this.handleRemoveAll}>Remove All</button>
+                    </div>
+                );
+            }
+        }
+
+    PT.2:
+        - setup the form in AddOption with a text input and a button
+        - wire up onSubmit
+        - handleAddOption -> fetch the value typed typed -> if value, then alert
+
+    SOLUTION:
+        class AddOption extends React.Component {
+            handleAddOption(e) {
+                e.preventDefault();
+
+                const option = e.target.elements.option.value;
+
+                if (option) {
+                    alert(option);
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleAddOption}>
+                            <input type="text" name="option" />
+                            <button>Add Option</button>
+                        </form>
+                    </div>
+                );
+            }
+        }
