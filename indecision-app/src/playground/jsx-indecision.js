@@ -39,7 +39,7 @@ const render = () => {
 	const template = (
 		<div>
 			<h1>{app.title}</h1>
-			{app.subtite && <p>{app.subtitle}</p>}
+			{app.subtitle && <p>{app.subtitle}</p>}
 			<p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
 			<button disabled={app.options.length <= 0 ? true : false} onClick={onMakeDecision}>
 				What should I do?

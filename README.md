@@ -320,4 +320,27 @@ props are the core of how components communicate with each other
 
 The value in the nested <Header /> are logged to the console
 
-left off at 2:34
+now we can use this.props.title in jsx. we have successfully used our first prop.
+
+        CHALLANGE:
+            - Setup options prop for Options component
+            - Render the length of the array
+            - create new paragraph element for every item in the page
+
+        SOLUTION:
+            - in Indecision app component pass options variable into the props:
+                <Options options={options} />
+
+            - in Options use the variable:
+                <h3>{this.props.options.length}</h3>
+
+            -pt.2
+                <ol>
+    				{this.props.options.map(option => (
+    					<p> key{option}</p>
+    				))}
+    			</ol>
+
+this solves it but to go further we can just pass in <Option /> instead
+
+what we learned is that when we create instances of react components we can also choose to pass data into it that looks very much like html attributes (key value pairs) key is a string and the value can be anything we like, string number or any other js expression. Then we can use that information with this.props. this gives us oneway communication.
