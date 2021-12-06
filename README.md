@@ -418,3 +418,42 @@ state allows our components to manage data so that we dont have to re-render whe
 component state is essential for interactive applications
 
 we learned that our state is an object with key value pairs. we define our initial data and that allows us to get that rendered to the screen(if count is set to 0 it starts at 0). we can change the state object based off of an event.
+
+32.   Adding State to Counter App: Part 1
+
+          - setup babel to run counter-example.js as source:
+                babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+          CHALLANGE:
+            - create 3 methods: handleAddOne, handleMinusOne, handleReset - Use console.log to print the method name
+
+          SOLUTION:
+            class Counter extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.handleAddOne = this.handleAddOne.bind(this);
+                    this.handleMinusOne = this.handleMinusOne.bind(this);
+                    this.handleReset = this.handleReset.bind(this);
+                }
+                handleAddOne(e) {
+                    console.log('add one');
+                }
+                handleMinusOne(e) {
+                    console.log('minus one');
+                }
+                handleReset(e) {
+                    console.log('reset');
+                }
+                render() {
+                    return (
+                        <div>
+                            <h1>Count: </h1>
+                            <button onClick={this.handleAddOne}>+1</button>
+                            <button onClick={this.handleMinusOne}>-1</button>
+                            <button onClick={this.handleReset}>reset</button>
+                        </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(<Counter />, document.getElementById('app'));
