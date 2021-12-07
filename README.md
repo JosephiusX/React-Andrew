@@ -519,3 +519,38 @@ while a component like Options cannot change its own props, new prop values can 
                 this.props.handlePick()
 
 Success! we have allowed a child to communicat with a parent by calling the method.
+
+37.   Indecision State: Part II
+
+In the last videw we learned how to reverse the dataflow from child to parent. Now we are going to do that as well as pass information upstream.
+
+        - in IndecisionApp make handleAddOption method
+        - set equal to self with the this binding set to this instance
+        - pass down to <AddOption/> as a prop
+        - now we call it and pass in option as an argument in AddOption component:
+            this.props.handleAddOption(option)
+
+Unlike before we keep the method in AddOption because we need access to things like e.preventDefault or get things from the form
+
+        - we do need to setup a constructor and pass in props
+        - pass them up to super
+        - then we bind that method
+
+we have 2 handleAdd methods now, one built into the component thats in charge of doing something when the form is submitted and we have one passed down from the parent thats going to manipulate things in terms of that state. It dosent yet.
+
+        - in indecisionApp:
+            handleDeleteOptions() {
+                this.setState(() => {
+                    return {
+                        options: [],
+                    };
+                });
+            }
+
+Now we can add to the options from our user interface!!!!! This means we have sucessfully communicated and passed information from a child component to a parent.
+
+        - add error handling incase someone tries to add an option again.
+
+we learned to add component state to as many as we need to , and we can also use function props to communicate in both directions. this allows a child like <Option/> to pass information to a parent like <IndecisionApp/>
+
+not only are we getting data into an array , we are gitting data on an array that lives on the component as component state, and we setup validation for our form.
