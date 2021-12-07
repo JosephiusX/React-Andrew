@@ -46,11 +46,22 @@ var Counter = function (_React$Component) {
 	}, {
 		key: 'handleReset',
 		value: function handleReset(e) {
-			this.setState(function (prevState) {
+			this.setState(function () {
 				return {
 					count: 0
 				};
 			});
+			this.setState(function (prevState) {
+				return {
+					count: prevState.count + 1
+				};
+			});
+			// this.setState({ // Asynchronous
+			// 	count: 0,
+			// });
+			// this.setState({ // the state change above dosent calculate the acync change above so adding one to the previous count
+			// 	count: this.state.count + 1,
+			// });
 		}
 	}, {
 		key: 'render',

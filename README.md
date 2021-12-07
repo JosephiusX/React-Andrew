@@ -461,3 +461,18 @@ we learned that our state is an object with key value pairs. we define our initi
 33.   Adding State to counter App: Part II
 
             - In the constructor fn set this. state = {}
+
+34.   Alternative setState Syntax
+
+                  - this way has been around for a while:
+                      handleReset(e) {
+                          this.setState(prevState => {
+                              return {
+                                  count: 0,
+                              };
+                          });
+                      }
+
+                  - An alternative method that is now concitered preferred:
+
+      our calls to this.setState are asynchronous so they can move to the next line without making a change to the state resulting in the only the last instance being registered.
