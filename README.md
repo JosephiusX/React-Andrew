@@ -554,3 +554,7 @@ Now we can add to the options from our user interface!!!!! This means we have su
 we learned to add component state to as many as we need to , and we can also use function props to communicate in both directions. this allows a child like <Option/> to pass information to a parent like <IndecisionApp/>
 
 not only are we getting data into an array , we are gitting data on an array that lives on the component as component state, and we setup validation for our form.
+
+38.   Summary: Props vs. State
+
+vizual sumary of everything we learned in this section
