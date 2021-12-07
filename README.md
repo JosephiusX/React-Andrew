@@ -479,8 +479,43 @@ we learned that our state is an object with key value pairs. we define our initi
 
 35.   Build It: Adding State to Visibility toggle
 
-              - srtup babble:
+              - setup babel:
                  babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
 
               CHALLANGE:
                 - VisibilityToggle - render, constructor, handleToggleVisibility - visibility -> false
+
+36.   Indecision State: Part I
+
+                  - setup babel:
+                   babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+we have children that need to be able to manipulate the parents state for example AddOption needs to get the text from the user and needs to manipulate the piece of state in IndecisionApp to store the new information from the user.
+
+So far with props we have a way to pass information from a parent component to a child component. To reverse this oneway dataflow we are going to include functions as props
+
+        - we define handleDeleteOptions method in indecision app
+        - In <Option /> inside the indecision app we add handleDeleteOptions in the props and set it equal to this.handleDeleteOptions
+        - in Options component remove handleRemoveAll method as well as the constructor
+        - access it from the parend using:
+            this.props.handleDeleteOptions
+        - In the IndecisionApp constructor bind handleDeleteOptions to this instance:
+            this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
+
+now when we click remove all our options dissappear because we took a method and passed it to a child component. The method is used to make changes to the parent component allowing for 2 way communication.
+
+while a component like Options cannot change its own props, new prop values can get passed down from the parent and those will trigger a re-render in child.
+
+        CHALLANGE:
+            - create new method in IndecisionApp component called handlepick - pass down to Action and setup onClick - bind
+            - Randomly pick object and alert it.
+
+        SOLUTION:
+            - delete handlePick in Action
+            - create handlePick with logic in Indecision app
+            - add to constructor and bind to this instance
+            - pass handlePick into <Action /> properties
+            - use in action component button onClick:
+                this.props.handlePick()
+
+Success! we have allowed a child to communicat with a parent by calling the method.
