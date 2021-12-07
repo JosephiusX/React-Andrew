@@ -476,3 +476,11 @@ we learned that our state is an object with key value pairs. we define our initi
                   - An alternative method that is now concitered preferred:
 
       our calls to this.setState are asynchronous so they can move to the next line without making a change to the state resulting in the only the last instance being registered.
+
+35.   Build It: Adding State to Visibility toggle
+
+              - srtup babble:
+                 babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+              CHALLANGE:
+                - VisibilityToggle - render, constructor, handleToggleVisibility - visibility -> false

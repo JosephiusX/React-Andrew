@@ -22,23 +22,12 @@ class Counter extends React.Component {
 			};
 		});
 	}
-	handleReset(e) {
+	handleReset() {
 		this.setState(() => {
 			return {
 				count: 0,
 			};
 		});
-		this.setState(prevState => {
-			return {
-				count: prevState.count + 1,
-			};
-		});
-		// this.setState({ // Asynchronous
-		// 	count: 0,
-		// });
-		// this.setState({ // the state change above dosent calculate the acync change above so adding one to the previous count
-		// 	count: this.state.count + 1,
-		// });
 	}
 	render() {
 		return (
