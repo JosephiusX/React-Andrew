@@ -558,3 +558,13 @@ not only are we getting data into an array , we are gitting data on an array tha
 38.   Summary: Props vs. State
 
 vizual sumary of everything we learned in this section alisudhf
+
+# sec5 Stateless Functional Components
+
+39. Section Intro: Stateless Functional Components
+
+Functional components are another way of doing things. Both ways are useful depending on whats needed. we will be using both.
+
+class components - for things that require state
+
+functional components - for things that dont require state

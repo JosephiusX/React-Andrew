@@ -1,3 +1,8 @@
+// stateless functional component
+// its a component like our class based options
+// it is a function unlike a class component
+
+// we are keeping IndecisionApp class  based because of state reasons
 class IndecisionApp extends React.Component {
 	constructor(props) {
 		super(props);
@@ -125,4 +130,18 @@ class AddOption extends React.Component {
 	}
 }
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+// our first functional stateless component
+const User = props => {
+	return (
+		<div>
+			<p>Name:{props.name}</p>{' '}
+			{
+				// if it was a class component it would be this.props.name
+			}
+			``
+			<p>Age:</p>
+		</div>
+	);
+};
+
+ReactDOM.render(<User name="Andrew" />, document.getElementById('app'));
