@@ -568,3 +568,19 @@ Functional components are another way of doing things. Both ways are useful depe
 class components - for things that require state
 
 functional components - for things that dont require state
+
+functional components are quicker than class components, so we should use them when we can
+
+        - easier to read and write
+        - easyir to test
+
+        CHALLANGE:
+            convert Option Options, and header into functional components
+
+the formula for turning a react class component into a functional component is to
+
+        - make a const and set it equal to a function with props passed in
+
+        - in brackets after that copy the return statement
+
+        - remove all instances of this from the return statement
