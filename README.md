@@ -584,3 +584,16 @@ the formula for turning a react class component into a functional component is t
         - in brackets after that copy the return statement
 
         - remove all instances of this from the return statement
+
+41. Default Prop Values
+
+we can add default props to a component reguardless of weather it is functional or class based
+
+        CHALLANGE:
+            in counter-example.js setup default prop value to 0
+
+        SOLUTION:
+            - Switch to compiling the right folder
+                      babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+
