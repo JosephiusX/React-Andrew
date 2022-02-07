@@ -596,4 +596,6 @@ we can add default props to a component reguardless of weather it is functional 
             - Switch to compiling the right folder
                       babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+42. React Dev Tools
 
+lookup chrome React dev tools in google, or firefox react dev tools and download extensions

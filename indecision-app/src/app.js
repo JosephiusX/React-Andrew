@@ -15,11 +15,14 @@ class IndecisionApp extends React.Component {
 	}
 
 	handleDeleteOptions() {
-		this.setState(() => {
-			return {
-				options: [],
-			};
-		});
+		// this.setState(() => {
+		// 	return {
+		// 		options: [],
+		// 	};
+		// });
+
+		//quicker way
+		this.setState(() => ({options: []}));
 	}
 
 	handlePick() {
@@ -34,11 +37,9 @@ class IndecisionApp extends React.Component {
 			return 'This option already exists';
 		}
 
-		this.setState(prevState => {
-			return {
-				options: prevState.options.concat(option),
-			};
-		});
+		this.setState(prevState => ({
+			options: prevState.options.concat(option),
+		}));
 	}
 	render() {
 		const subtitle = 'Put your life in the hands of a computer';
