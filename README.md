@@ -592,10 +592,25 @@ we can add default props to a component reguardless of weather it is functional 
         CHALLANGE:
             in counter-example.js setup default prop value to 0
 
-        SOLUTION:
-            - Switch to compiling the right folder
-                      babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
-
 42. React Dev Tools
 
 lookup chrome React dev tools in google, or firefox react dev tools and download extensions
+
+43. Removing Individual Options
+
+? looks like im caught up to at least 11:42 with my code but still not working - catching up to where I left off at around 13:09
+
+-  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
+
+*
+
+        ? now everything is removed when I only press single remove button
+
+        * seems to be working great now!!!!!!!!!!!!!!!!
+
+         - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+
+looks like I have remove buttons' button already
+
+great app overview at the end of this lesson
+
