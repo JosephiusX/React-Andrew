@@ -656,6 +656,9 @@ convert it back to a javascript object
         - seems the local sotrage is working
         - maybe a problem options variable
 
+
+        
+
         ? prevProps not unused in 'componentDidUpdate'
     * const json = "JSON.stringify(this.state.options.length)" on this line I saved the length of options instead of just the options
 back on track
@@ -669,6 +672,13 @@ If the data inside options isint valad data an error arises :
 
         we use try catch in 'componentDidMount'
 
-    
+46. Saving and Loading the Count
+
+in 'indecision app' 
+
+        - set props.options to an empty array
+        - delete the default props
+
+do the same for the counter example only setting the state to 0 instead of an empty array
 
 
