@@ -614,3 +614,61 @@ looks like I have remove buttons' button already
 
 great app overview at the end of this lesson
 
+44. Lifecycle Methods
+
+
+lifecycle methods fire at various points in the component lifetime. Theyre only availabel in class based components.
+
+https://reactjs.org/docs/react-component.html
+
+
+45. Saving and Loading Options Data
+
+        localStorage.setItem('name', 'name')
+        localStorage.getItem('key')
+        localStorage.removeItem('key')
+local storage only works with string data, any numbers will be converted into a string.
+
+we overcome this by using json which is a string object
+
+        -JSON.stringify : 
+            takes regular javascript object and turns it into a string representation
+
+        -JSON.parse :
+            takes the string representation and turns it back into a true javascript object
+
+        EXAMPLE:
+
+            JSON.stringify({age:26})
+                returns:
+                    "{"age":26}"
+save it as const
+
+            const json = JSON.stringify({age:28})
+
+convert it back to a javascript object
+
+            JSON.parse(json)
+
+
+    ?? Only getting back the numberr of options at 7:52 in the lesson
+
+        - seems the local sotrage is working
+        - maybe a problem options variable
+
+        ? prevProps not unused in 'componentDidUpdate'
+    * const json = "JSON.stringify(this.state.options.length)" on this line I saved the length of options instead of just the options
+back on track
+
+If there are no options JSON.parse() returns null which results in an error
+
+        so we set the state in an if statement to run only if options is true
+        if its null it wont set state
+
+If the data inside options isint valad data an error arises :
+
+        we use try catch in 'componentDidMount'
+
+    
+
+
