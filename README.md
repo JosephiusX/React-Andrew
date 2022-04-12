@@ -722,10 +722,46 @@ set up scripts
 
     babel:
         npm run build
+            changedL
+        build-babel
+
 
             or
         yarn run build
 
+now we are set up in a much more scaleable way than using global modules 
+alone.
 
         
-       
+50. Installing & Configuring Webpack
+
+        - set build script to "webpack"
+
+        - move app.js into playground folder
+
+        - in src make a new app.js file
+
+        - in the root create file 'webpack.config.js' 
+
+webpack.js.org docs to learn about all the ways entry can be used
+
+        to run after config(indecision-app):
+            > node webpack.config.js
+                results in absolute path to folder
+
+we want it in the public folder so we can serve it up5
+
+        check out docs for 'node path'
+
+        - import path module and usit to join paths '__dirname' and 'public'      
+
+Build command works now  
+
+        - I now have bundle.js in my public folder 
+
+        - inside public, we delete scripts altogether
+
+        - In index.html, remove unneeded script tags and update path to:
+            /bundle.js
+
+app.js is running!!!!!
