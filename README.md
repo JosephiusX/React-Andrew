@@ -681,4 +681,51 @@ in 'indecision app'
 
 do the same for the counter example only setting the state to 0 instead of an empty array
 
+# SEC.6 WEBPACK
 
+48. What Is Webpack?
+
+high level overview
+
+49. Avoid Global Modules
+
+currently webpack is installed globally which is not scalable.
+
+remove global modules
+
+        > yarn global remove babel-cli live-server
+
+            or if with npm
+
+        > npm uninstall -g babel-cli live-server
+
+add as dev dependancies
+
+        > yarn add live-server babel-cli6.24.1
+automatically places them in dev dependences
+
+            npm option
+
+       ? > npm i live-server babel-cli6.24.1 -save-dev
+
+? none of this is working, something about no yarn lock file
+
+    - I made a yarn.lock file after re installing yarn, resetting computer,
+    and installing live server with yarn (automatically upon installing with yarn)
+
+i installed them individually FINALLY
+
+set up scripts
+
+    live-server:       
+        - npm run serve
+
+    babel:
+        npm run build
+
+            or
+        yarn run build
+
+
+        
+       
