@@ -798,3 +798,9 @@ now we can use jsx instead of the react call placeholder
 we refactored AddOption component from app.js into its own file in components called AddOption.js using export default to then import it in app.js 
 
 CHALLANGEs: aced
+
+56. Source Maps with Webpack
+
+we setup devtool property in webpack config file to choose the type of sourcemap we want. check docs for details and options.
+
+now when the test error in AddOption.js we created is thrown , we are directed to that file in the source instead of the convoluted public file. takes us to the original issue instead of the bundle file.
