@@ -804,3 +804,20 @@ CHALLANGEs: aced
 we setup devtool property in webpack config file to choose the type of sourcemap we want. check docs for details and options.
 
 now when the test error in AddOption.js we created is thrown , we are directed to that file in the source instead of the convoluted public file. takes us to the original issue instead of the bundle file.
+
+57. Webpack Dev Server
+
+specialized replacement for live-server
+
+look on webpackjs.org for docs for info
+
+        - yarn add webpack-dev-server@2.5.1
+
+after setting up in webpack config file we can make a adjustments to our scripts in package.json
+
+        - remove build-babel command
+        - remove watch from build script command
+        - add "dev-server" to scripts and set it to "webpack-dev-server"
+
+
+
