@@ -819,5 +819,39 @@ after setting up in webpack config file we can make a adjustments to our scripts
         - remove watch from build script command
         - add "dev-server" to scripts and set it to "webpack-dev-server"
 
+now we dont need liveserver as the dev server will be activated with the 'yarn run dev-server' command.
+
+58. ES6 class properties
+
+This will allow us to not have to write out a constructor function.
+
+babbel.js.io:
+    look up plugins in the docs
+
+            -yarn add babel-plugin-transform-class-properties@6.24.1
+
+            - configure in babelrc
+
+            class OldSyntax {
+                constructor() {
+                    this.name = 'Mike';
+                }
+            }
+            const oldSyntax = new OldSyntax();
+            console.log(oldSyntax);
+                result: 
+                    OldSyntax {name: 'Mike'}
+
+            class NewSyntax {
+                name = 'Jen';
+            }
+            const newSyntax = new NewSyntax();
+            console.log(newSyntax);
+                result:
+                    same as above without writing out a constructor function
+
+we can now update AddOption by deleting the constructor function, and turning handleAddOption into an arrow function
+
+
 
 
