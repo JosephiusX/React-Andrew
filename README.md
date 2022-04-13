@@ -784,3 +784,12 @@ lookup npm validator on npm
 
 we now have react and react dom installed imported and used. Next we need to setup support for jsx
 
+
+54. Setting up Babel with Webpack
+
+        yarn add babel-core@6.25.0 babel-loader@7.1.1
+
+in webpack config setup module object. look at webpack.js.org for the docs
+
+now we can use jsx instead of the react call placeholder
+
