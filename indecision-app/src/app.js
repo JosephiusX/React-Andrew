@@ -1,7 +1,8 @@
-// install , import, use
-
-import React from 'react';
+import IndecisionApp from './components/IndecisionApp';
+import React from 'react'
 import ReactDOM from 'react-dom';
 
-const template = <p>THIS IS JSX FROM WEBPACK</p>;
-ReactDOM.render(template, document.getElementById('app'));
+ReactDOM.render(
+	<IndecisionApp options={['Default Option One', 'Default Option Two']} />,
+	document.getElementById('app'),
+);

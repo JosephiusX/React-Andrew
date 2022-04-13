@@ -793,3 +793,8 @@ in webpack config setup module object. look at webpack.js.org for the docs
 
 now we can use jsx instead of the react call placeholder
 
+55. One Component per File
+
+we refactored AddOption component from app.js into its own file in components called AddOption.js using export default to then import it in app.js 
+
+CHALLANGEs: aced
