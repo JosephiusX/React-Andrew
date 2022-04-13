@@ -765,3 +765,22 @@ Build command works now
             /bundle.js
 
 app.js is running!!!!!
+
+'watch' webpack in the scripts
+
+53. Importing npm Modules
+
+lookup npm validator on npm
+
+        yarn install npm validator:
+            yarn add validator@8.0.0
+
+        check docs on npm for the module usage
+            import validator form 'validator'
+
+        npm react and npm react dom:
+
+            yarn add react@16.0.0 react-dom@16.0.0
+
+we now have react and react dom installed imported and used. Next we need to setup support for jsx
+
