@@ -852,6 +852,27 @@ babbel.js.io:
 
 we can now update AddOption by deleting the constructor function, and turning handleAddOption into an arrow function
 
+# SEC 7 
 
+58. ES6 class properties
 
+introduction
+
+60. Passing Children to Component
+
+61. Setting up React-Modal
+
+https://github.com/reactjs/react-modal
+
+        - yarn add react-modal@2.2.2
+        
+        - in components touch OptionModal.js
+
+10:56 modal showing up as expected
+
+        CHALLANGE: 
+
+            - create a new event handle in IndecisionApp
+            - Pass that into OptionalModal
+            - call it on click
 
