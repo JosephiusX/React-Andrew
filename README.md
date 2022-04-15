@@ -876,3 +876,8 @@ https://github.com/reactjs/react-modal
             - Pass that into OptionalModal
             - call it on click
 
+62. Bonus: Refactoring Other Stateless Functional Components
+Up next
+
+63. Section Intro: Styling React
+How did this section go?
