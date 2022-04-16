@@ -881,3 +881,33 @@ Up next
 
 63. Section Intro: Styling React
 How did this section go?
+
+64. Setting up Webpack with SCSS
+
+run stuff whenever webpack discovers a styles file
+
+lookup css-loader package on npm
+    allows webpack to load in our css assets
+
+npm package style-loader as well
+
+    yarn add style-loader@0.18.2 css-loader@0.28.4
+
+        configuration:
+
+            {
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader'],
+			}
+
+now we can load our styles into app.js using an import statement like we would with a javascript file
+
+lookup ' sass-lang.com '
+
+yarn add sass-loader@6.0.6 node-sass@4.5.3
+
+        ? gyp error
+            seems not installing properly 10:50
+* finally after installing individually it worked, though node sass took a couple trys
+
+sass styles now connected
