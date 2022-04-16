@@ -602,13 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*
+*         ? now everything is removed when I only press single remove button
 
-        ? now everything is removed when I only press single remove button
+          * seems to be working great now!!!!!!!!!!!!!!!!
 
-        * seems to be working great now!!!!!!!!!!!!!!!!
-
-         - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+           - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -616,22 +614,21 @@ great app overview at the end of this lesson
 
 44. Lifecycle Methods
 
-
 lifecycle methods fire at various points in the component lifetime. Theyre only availabel in class based components.
 
 https://reactjs.org/docs/react-component.html
 
+45.   Saving and Loading Options Data
 
-45. Saving and Loading Options Data
+              localStorage.setItem('name', 'name')
+              localStorage.getItem('key')
+              localStorage.removeItem('key')
 
-        localStorage.setItem('name', 'name')
-        localStorage.getItem('key')
-        localStorage.removeItem('key')
-local storage only works with string data, any numbers will be converted into a string.
+      local storage only works with string data, any numbers will be converted into a string.
 
 we overcome this by using json which is a string object
 
-        -JSON.stringify : 
+        -JSON.stringify :
             takes regular javascript object and turns it into a string representation
 
         -JSON.parse :
@@ -642,6 +639,7 @@ we overcome this by using json which is a string object
             JSON.stringify({age:26})
                 returns:
                     "{"age":26}"
+
 save it as const
 
             const json = JSON.stringify({age:28})
@@ -657,10 +655,11 @@ convert it back to a javascript object
         - maybe a problem options variable
 
 
-        
+
 
         ? prevProps not unused in 'componentDidUpdate'
     * const json = "JSON.stringify(this.state.options.length)" on this line I saved the length of options instead of just the options
+
 back on track
 
 If there are no options JSON.parse() returns null which results in an error
@@ -674,7 +673,7 @@ If the data inside options isint valad data an error arises :
 
 46. Saving and Loading the Count
 
-in 'indecision app' 
+in 'indecision app'
 
         - set props.options to an empty array
         - delete the default props
@@ -702,6 +701,7 @@ remove global modules
 add as dev dependancies
 
         > yarn add live-server babel-cli6.24.1
+
 automatically places them in dev dependences
 
             npm option
@@ -717,7 +717,7 @@ i installed them individually FINALLY
 
 set up scripts
 
-    live-server:       
+    live-server:
         - npm run serve
 
     babel:
@@ -729,19 +729,17 @@ set up scripts
             or
         yarn run build
 
-now we are set up in a much more scaleable way than using global modules 
-alone.
+now we are set up in a much more scaleable way than using global modules alone.
 
-        
-50. Installing & Configuring Webpack
+50.   Installing & Configuring Webpack
 
-        - set build script to "webpack"
+          - set build script to "webpack"
 
-        - move app.js into playground folder
+          - move app.js into playground folder
 
-        - in src make a new app.js file
+          - in src make a new app.js file
 
-        - in the root create file 'webpack.config.js' 
+          - in the root create file 'webpack.config.js'
 
 webpack.js.org docs to learn about all the ways entry can be used
 
@@ -753,11 +751,11 @@ we want it in the public folder so we can serve it up5
 
         check out docs for 'node path'
 
-        - import path module and usit to join paths '__dirname' and 'public'      
+        - import path module and usit to join paths '__dirname' and 'public'
 
-Build command works now  
+Build command works now
 
-        - I now have bundle.js in my public folder 
+        - I now have bundle.js in my public folder
 
         - inside public, we delete scripts altogether
 
@@ -784,10 +782,9 @@ lookup npm validator on npm
 
 we now have react and react dom installed imported and used. Next we need to setup support for jsx
 
+54.   Setting up Babel with Webpack
 
-54. Setting up Babel with Webpack
-
-        yarn add babel-core@6.25.0 babel-loader@7.1.1
+          yarn add babel-core@6.25.0 babel-loader@7.1.1
 
 in webpack config setup module object. look at webpack.js.org for the docs
 
@@ -795,7 +792,7 @@ now we can use jsx instead of the react call placeholder
 
 55. One Component per File
 
-we refactored AddOption component from app.js into its own file in components called AddOption.js using export default to then import it in app.js 
+we refactored AddOption component from app.js into its own file in components called AddOption.js using export default to then import it in app.js
 
 CHALLANGEs: aced
 
@@ -825,8 +822,7 @@ now we dont need liveserver as the dev server will be activated with the 'yarn r
 
 This will allow us to not have to write out a constructor function.
 
-babbel.js.io:
-    look up plugins in the docs
+babbel.js.io: look up plugins in the docs
 
             -yarn add babel-plugin-transform-class-properties@6.24.1
 
@@ -839,7 +835,7 @@ babbel.js.io:
             }
             const oldSyntax = new OldSyntax();
             console.log(oldSyntax);
-                result: 
+                result:
                     OldSyntax {name: 'Mike'}
 
             class NewSyntax {
@@ -852,7 +848,7 @@ babbel.js.io:
 
 we can now update AddOption by deleting the constructor function, and turning handleAddOption into an arrow function
 
-# SEC 7 
+# SEC 7
 
 58. ES6 class properties
 
@@ -865,29 +861,26 @@ introduction
 https://github.com/reactjs/react-modal
 
         - yarn add react-modal@2.2.2
-        
+
         - in components touch OptionModal.js
 
 10:56 modal showing up as expected
 
-        CHALLANGE: 
+        CHALLANGE:
 
             - create a new event handle in IndecisionApp
             - Pass that into OptionalModal
             - call it on click
 
-62. Bonus: Refactoring Other Stateless Functional Components
-Up next
+62. Bonus: Refactoring Other Stateless Functional Components Up next
 
-63. Section Intro: Styling React
-How did this section go?
+63. Section Intro: Styling React How did this section go?
 
 64. Setting up Webpack with SCSS
 
 run stuff whenever webpack discovers a styles file
 
-lookup css-loader package on npm
-    allows webpack to load in our css assets
+lookup css-loader package on npm allows webpack to load in our css assets
 
 npm package style-loader as well
 
@@ -896,9 +889,9 @@ npm package style-loader as well
         configuration:
 
             {
-				test: /\.scss$/,
-				use: ['style-loader', 'css-loader'],
-			}
+    			test: /\.scss$/,
+    			use: ['style-loader', 'css-loader'],
+    		}
 
 now we can load our styles into app.js using an import statement like we would with a javascript file
 
@@ -908,6 +901,43 @@ yarn add sass-loader@6.0.6 node-sass@4.5.3
 
         ? gyp error
             seems not installing properly 10:50
-* finally after installing individually it worked, though node sass took a couple trys
+
+-  finally after installing individually it worked, though node sass took a couple trys
 
 sass styles now connected
+
+65. Architecture and Header Styles
+
+By default 1rem is 16px, this can be unintuitive to calculate as is,
+
+        SOLUTION:
+            - set html font size to 62.5%
+
+now if we 'ctrl + shift + c' and select the element, we can select the computed tab as apposed to the style to see that 1rem is now 10px. Easier to calculate.
+
+        - then we set fontsize in the body to 1.6rem which calculates to 32px
+
+        - make a components folder in styles. 
+
+        - import into styles.scss
+
+        - now we navigate to the corisponding component in source
+        - we give the div 'className="header" as opposed to just class as it is jsx.
+
+lookup getbem for info on block element midifier
+
+
+
+
+
+
+
+
+
+
+
+
+76. Setting Up Budget App
+
+cloneing and gutting indecision app to gut it for an expensify app
+ 
