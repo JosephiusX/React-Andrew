@@ -926,6 +926,18 @@ now if we 'ctrl + shift + c' and select the element, we can select the computed 
 
 lookup getbem for info on block element midifier
 
+66. Reset That $#!*
+
+lookup normalize css to find resets so we are always have the same starting point for communication with other browsers
+
+        > yarn add normalize.css@7.0.0
+            then we import it into app.js
+                then we update the test: regExpression to:
+                    test: /\.s?css$/,
+Now some of the wierd browser margins are gone and we have a good starting point. 
+
+Again, look into regular expressions. 
+
 
 
 
