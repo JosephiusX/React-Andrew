@@ -962,6 +962,21 @@ lookup 'sass reference functions'
               - center the text using - text-align: center;
               - set the bottom border 1px solid border lightened version of $light-blue 10%
 
-70.   Setting Up Budget App
+70. Styling Option Item
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 cloneing and gutting indecision app to gut it for an expensify app
