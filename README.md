@@ -602,11 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*         ? now everything is removed when I only press single remove button
+*          ? now everything is removed when I only press single remove button
 
-          * seems to be working great now!!!!!!!!!!!!!!!!
+           * seems to be working great now!!!!!!!!!!!!!!!!
 
-           - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+            - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -917,7 +917,7 @@ now if we 'ctrl + shift + c' and select the element, we can select the computed 
 
         - then we set fontsize in the body to 1.6rem which calculates to 32px
 
-        - make a components folder in styles. 
+        - make a components folder in styles.
 
         - import into styles.scss
 
@@ -926,7 +926,7 @@ now if we 'ctrl + shift + c' and select the element, we can select the computed 
 
 lookup getbem for info on block element midifier
 
-66. Reset That $#!*
+66. Reset That $#!\*
 
 lookup normalize css to find resets so we are always have the same starting point for communication with other browsers
 
@@ -934,12 +934,10 @@ lookup normalize css to find resets so we are always have the same starting poin
             then we import it into app.js
                 then we update the test: regExpression to:
                     test: /\.s?css$/,
-Now some of the wierd browser margins are gone and we have a good starting point. 
 
-Again, look into regular expressions. 
+Now some of the wierd browser margins are gone and we have a good starting point.
 
-
-
+Again, look into regular expressions.
 
 67. Theming with Variables
 
@@ -947,12 +945,23 @@ Again, look into regular expressions.
 
 lookup 'sass reference functions'
 
+69.   Styling the Options List
 
+          CHALLANGE:
+              - setup an element selector for widget-header
+              - set margin
+              - use the class
 
+          CHALLANGE:
 
+              - create a widget element selector
+              - use it on the p tag
+              - off-white color
+              - no margin
+              l size padding on all sides
+              - center the text using - text-align: center;
+              - set the bottom border 1px solid border lightened version of $light-blue 10%
 
-
-76. Setting Up Budget App
+70.   Setting Up Budget App
 
 cloneing and gutting indecision app to gut it for an expensify app
- 
