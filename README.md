@@ -964,6 +964,7 @@ lookup 'sass reference functions'
 
 70. Styling Option Item
 
+71. Styling React-Modal
 
 
 
