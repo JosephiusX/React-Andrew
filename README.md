@@ -966,6 +966,7 @@ lookup 'sass reference functions'
 
 71. Styling React-Modal
 
+72. Mobile Considerations
 
 
 
