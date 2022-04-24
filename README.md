@@ -1042,3 +1042,15 @@ now we can add prop "activeClassName='is-active'"
 	                    font-weight: bold;
                         }
 Now the navigation route that is active now shows up bold.
+
+80. Organizing Our Routes
+
+        -im src mkdir routers
+        - in routers touch AppRoter.js
+ from app.js cut everything but the imports and the render call and paste into AppRouter
+
+        CHALLANGE :
+            - create 6 new files for 6 components
+            - setup imports, component, default export
+            - import into AppRouter so they can be used
+Getting lost with what imports and exports where
