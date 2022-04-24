@@ -990,3 +990,15 @@ by the end of this lesson we should have a page for each compnent
             -add /help : /helpPage
 understood.
 
+review at : 19:00 
+
+78. Setting up a 404
+
+if someone trys to access a route that dosent exist, an empty page is rendered. Insted we need a error route
+
+        using Switch
+            -add it to imports in app.js 'Switch'
+            - change the div in routes to '<Switch>
+this will change behavior of react router. With switch react moves through switch routes in order until a match is found, then it stops. 
+
+now we get the first match for a route only, and if we dont have a match , the 404 error appears.
