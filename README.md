@@ -968,17 +968,25 @@ lookup 'sass reference functions'
 
 72. Mobile Considerations
 
+73. Bonus: Favicon
 
+76. Setting Up Budget App
 
-
-
-
-
-
-
-
-
-
-
+# SEC 9 React Router
 
 cloneing and gutting indecision app to gut it for an expensify app
+
+77. React-Router 101
+
+google react-router to find the github repo page
+
+by the end of this lesson we should have a page for each compnent
+
+        - yarn add react-router-dom4.2.2
+
+        CHALLANGE:
+
+            -add /edit : /EditExpensePage
+            -add /help : /helpPage
+understood.
+
