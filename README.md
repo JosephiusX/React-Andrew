@@ -1002,3 +1002,43 @@ if someone trys to access a route that dosent exist, an empty page is rendered. 
 this will change behavior of react router. With switch react moves through switch routes in order until a match is found, then it stops. 
 
 now we get the first match for a route only, and if we dont have a match , the 404 error appears.
+
+79. Linking Between Routes
+ 
+Switching pages without a full refresh!!
+
+
+        Old way(causes refresh):
+
+
+            const  NotFoundPage = () => <div>404! <a href='/' >Go home</a> </div>;
+
+        add "Link" to our imports
+            replace "<a>" tags with "<Link>" and "href" with "to" like so:
+
+                <div>
+		            404! <Link to="/">Go home</Link>
+	            </div>
+
+...
+
+        CHALLANGE:
+            -link to home page
+            -link to the create expense page
+            -link to the edit page
+            -linking to the help page
+
+now we can navigate through each page of without a full page reload!!!!!!
+
+to style the links :
+
+        import 'Navlink' at the top of the file.
+            - below , change every instance of "Link" to "NavLink"
+now we can add prop "activeClassName='is-active'"
+
+        then in styles we target it and set it to bold:
+
+            .is-active {
+	                    font-weight: bold;
+                        }
+Now the navigation route that is active now shows up bold.
