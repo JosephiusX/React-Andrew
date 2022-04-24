@@ -1018,7 +1018,7 @@ Switching pages without a full refresh!!
 
                 <div>
 		            404! <Link to="/">Go home</Link>
-	            </div>
+	            </div>`
 
 ...
 
