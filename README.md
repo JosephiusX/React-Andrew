@@ -602,11 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*          ? now everything is removed when I only press single remove button
+*            ? now everything is removed when I only press single remove button
 
-           * seems to be working great now!!!!!!!!!!!!!!!!
+             * seems to be working great now!!!!!!!!!!!!!!!!
 
-            - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+              - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -962,15 +962,15 @@ lookup 'sass reference functions'
               - center the text using - text-align: center;
               - set the bottom border 1px solid border lightened version of $light-blue 10%
 
-70. Styling Option Item
+70.   Styling Option Item
 
-71. Styling React-Modal
+71.   Styling React-Modal
 
-72. Mobile Considerations
+72.   Mobile Considerations
 
-73. Bonus: Favicon
+73.   Bonus: Favicon
 
-76. Setting Up Budget App
+74.   Setting Up Budget App
 
 # SEC 9 React Router
 
@@ -988,9 +988,10 @@ by the end of this lesson we should have a page for each compnent
 
             -add /edit : /EditExpensePage
             -add /help : /helpPage
+
 understood.
 
-review at : 19:00 
+review at : 19:00
 
 78. Setting up a 404
 
@@ -999,14 +1000,14 @@ if someone trys to access a route that dosent exist, an empty page is rendered. 
         using Switch
             -add it to imports in app.js 'Switch'
             - change the div in routes to '<Switch>
-this will change behavior of react router. With switch react moves through switch routes in order until a match is found, then it stops. 
+
+this will change behavior of react router. With switch react moves through switch routes in order until a match is found, then it stops.
 
 now we get the first match for a route only, and if we dont have a match , the 404 error appears.
 
 79. Linking Between Routes
- 
-Switching pages without a full refresh!!
 
+Switching pages without a full refresh!!
 
         Old way(causes refresh):
 
@@ -1017,8 +1018,8 @@ Switching pages without a full refresh!!
             replace "<a>" tags with "<Link>" and "href" with "to" like so:
 
                 <div>
-		            404! <Link to="/">Go home</Link>
-	            </div>`
+    	            404! <Link to="/">Go home</Link>
+                </div>`
 
 ...
 
@@ -1034,25 +1035,40 @@ to style the links :
 
         import 'Navlink' at the top of the file.
             - below , change every instance of "Link" to "NavLink"
+
 now we can add prop "activeClassName='is-active'"
 
         then in styles we target it and set it to bold:
 
             .is-active {
-	                    font-weight: bold;
+                        font-weight: bold;
                         }
+
 Now the navigation route that is active now shows up bold.
 
-80. Organizing Our Routes
+80.   Organizing Our Routes
 
-        -im src mkdir routers
-        - in routers touch AppRoter.js
- from app.js cut everything but the imports and the render call and paste into AppRouter
+              -im src mkdir routers
+              - in routers touch AppRoter.js
 
-        CHALLANGE :
-            - create 6 new files for 6 components
-            - setup imports, component, default export
-            - import into AppRouter so they can be used
-Getting lost with what imports and exports where
+      from app.js cut everything but the imports and the render call and paste into AppRouter
 
-81. Query Strings and URL Parameters
+              CHALLANGE :
+                  - create 6 new files for 6 components
+                  - setup imports, component, default export
+                  - import into AppRouter so they can be used
+
+      Getting lost with what imports and exports where
+
+81.   Query Strings and URL Parameters
+
+82.   Build It: Router for Portfolio Site ( great spot for review)
+
+          CHALLANGE: clone expensify-app to make a portfolio-site
+
+              /  -> Home page (in nav)
+              /portfolio -> portfolio item page that shows the ID
+              /portfolio/123 -> individual portfolio item page that shows the ID
+              /contact -> Contact page (in nav)
+
+follow through
