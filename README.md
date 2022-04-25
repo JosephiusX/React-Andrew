@@ -1072,3 +1072,28 @@ Now the navigation route that is active now shows up bold.
               /contact -> Contact page (in nav)
 
 follow through
+
+# SEC: 10 Redux
+
+84. Why Do We Need Something Like Redux?
+
+component state and redux both solve the same problem, tracking changing data.
+
+        Component State (IndecisionApp):
+in indecision app all the data lives in the Indecision-app component, is passed down to options, option, and AddOption, and Is Passed Up to Indecision App from AddOption. This is simple and is easaly handled using component state.
+
+        - its clear where the state should live
+        - components are reliant on each other thus not truely reusable
+        - good to use when passing a prop to a child that said child will make use of.
+components communicate with eachother for state data
+
+
+        REDUX (ExpenxsifyApp):
+In the expensify-app we are going to be building, data will live in AddExpensePage to b passed down to AddExpense, and data in ExpenseDashboardPage to be passed down only to Expenses, and expence. Being more complex and having data in 2 places only needed in specific places, the ExpensifyApp is a good candidate to use REDUX to manage data(state)
+
+        - theres not one clear place where the state should live
+        - we can route data needed in multiple places without routeing through the parent makeing our components actually reuseable.
+        - Instead of passing props from child to child to be used down the chain, REDUX helps us avoid this.
+
+Redux Store is an object in which we store data. The components can choose individually what to do with the data they need(retreve and edit).Instead of communicating with each other, the components only need to communicate with Redux store. This allows for great scaleability.
+
