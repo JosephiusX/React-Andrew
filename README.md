@@ -1054,3 +1054,5 @@ Now the navigation route that is active now shows up bold.
             - setup imports, component, default export
             - import into AppRouter so they can be used
 Getting lost with what imports and exports where
+
+81. Query Strings and URL Parameters
