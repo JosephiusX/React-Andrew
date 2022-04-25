@@ -1097,3 +1097,20 @@ In the expensify-app we are going to be building, data will live in AddExpensePa
 
 Redux Store is an object in which we store data. The components can choose individually what to do with the data they need(retreve and edit).Instead of communicating with each other, the components only need to communicate with Redux store. This allows for great scaleability.
 
+85. Setting up Redux
+
+
+ 
+lookup redux.js.org
+
+        - yarn add redux@3.7.2
+        - import {createStore} from 'redux'
+
+        redux-101.js
+            import {createStore} from 'redux';
+
+            const store = createStore((state = {count: 0}) => {
+	            return state;
+            });
+
+            console.log(store.getState());
