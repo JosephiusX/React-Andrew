@@ -1114,3 +1114,8 @@ lookup redux.js.org
             });
 
             console.log(store.getState());
+
+86. Dispatching Actions
+ (an object that gets sent to the store)
+
+        see redux-101.js in playground
