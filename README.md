@@ -1124,5 +1124,8 @@ lookup redux.js.org
 
 How do we watch for changes in the redux state
 
-        
+88. ES6 Object Destructuring
+
+        - touch destructuring.js file in playground
+
 
