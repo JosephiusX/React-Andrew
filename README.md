@@ -1128,4 +1128,8 @@ How do we watch for changes in the redux state
 
         - touch destructuring.js file in playground
 
+89. ES6 Array Destructuring
+
+        - also in destructureing.js
+
 
