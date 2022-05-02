@@ -20,6 +20,18 @@ const removeExpense = ({id} = {}) => ({
 	id,
 });
 
+// EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+	type: 'EDIT_EXPENSE',
+	id,
+});
+
+// SET TEXT FILTER
+const setTextFilter = (text = '') => ({
+	type: 'SET_TEXT_FILTER',
+	text,
+});
+
 const expensesReducerDefaultState = [];
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
 	switch (action.type) {
@@ -27,6 +39,17 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 			return [...state, action.expense]; //state and action into new
 		case 'REMOVE_EXPENSE':
 			return state.filter(({id}) => id !== action.id);
+		case 'EDIT_EXPENSE':
+			return state.map(expense => {
+				if (expense.id === action.id) {
+					return {
+						...expense,
+						...action.updates,
+					};
+				} else {
+					return expense;
+				}
+			});
 		default:
 			return state;
 	}
@@ -40,6 +63,11 @@ const filtersReducerDefaultState = {
 };
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
 	switch (action.type) {
+		case 'SET_TEXT_FILTER':
+			return {
+				...state,
+				text: action.text,
+			};
 		default:
 			return state;
 	}
@@ -62,8 +90,10 @@ const expenseOne = store.dispatch(addExpense({discription: 'Rent', amount: 100})
 const expenseTwo = store.dispatch(addExpense({discription: 'Coffee', amount: 300}));
 
 store.dispatch(removeExpense({id: expenseOne.expense.id}));
+store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
 
-console.log(expenseOne);
+store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter());
 
 const demoState = {
 	expenses: [
@@ -82,3 +112,15 @@ const demoState = {
 		endDate: undefined,
 	},
 };
+
+const user = {
+	name: 'Jen',
+	age: 24,
+};
+
+console.log({
+	age: 27, // not overwritten before the spreade
+	...user,
+	location: 'Philadelphia',
+	// age: 27, // age is overwritten to 27
+});

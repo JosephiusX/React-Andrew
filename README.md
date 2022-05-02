@@ -1191,9 +1191,33 @@ before we were passing a reducer into the function for createing the store. Inst
 
 92. Working with Multiple Reducers
 
-93. ES6 Spread Operator in Reducers
+93. ES6 Spread Operator in Reducers (array spread)
 
 7:30 so far so good
 
 followed along with challange
 
+94. Spreading Objects
+
+inside arrays we spread arrays
+inside objects we spread objects
+
+for objects we need to customize babel to support this syntax
+
+lookup the plugin in google:
+    babel object spread operator
+
+obj spread example:
+
+        const user = {
+	        name: 'Jen',
+	        age: 24,
+        };
+
+console.log({
+	age: 27, // not overwritten before the spreade
+	...user,
+	location: 'Philadelphia',
+	// age: 27, // age is overwritten to 27
+});
+esd
