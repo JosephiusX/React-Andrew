@@ -27,8 +27,25 @@ const resetCount = () => ({
 	type: 'RESET',
 });
 
-// Store object
-const store = createStore((state = {count: 0}, action) => {
+// Not Pure function
+let a = 10;
+const add = (b) => {
+	return a + b;
+}
+
+//Pure function
+const addPure = (a, b) => {
+	return a + b;
+}
+
+// not pure
+let result;
+const add2 = (b, b) => {
+	result = a + b;
+}
+
+// Reducers- pure function, never changes state or actions
+const countReducer = (state = {count: 0}, action) => {
 	switch (
 		action.type // switch instead of if else
 	) {
@@ -52,7 +69,10 @@ const store = createStore((state = {count: 0}, action) => {
 		default:
 			return state;
 	}
-});
+};
+
+// here we reference 'countReducer' but not executing
+const store = createStore(countReducer);
 
 // How do we watch for changes in the redux state
 const unsubscribe = store.subscribe(() => {
@@ -66,8 +86,6 @@ store.dispatch(resetCount());
 store.dispatch(decrementCount({decrementBy: 8}));
 store.dispatch(setCount({count: 35}));
 
-
-
 //I'd like to increment the cont
 // store.dispatch({
 // 	type: 'INCREMENT',
@@ -77,7 +95,6 @@ store.dispatch(setCount({count: 35}));
 // store.dispatch({
 // 	type: 'RESET',
 // });
-
 
 // store.dispatch({
 // 	type: 'DECREMENT',

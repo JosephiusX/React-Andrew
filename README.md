@@ -1157,3 +1157,35 @@ const setCount = ({count}) => ({
 good lesson to review to see what redux looks like in a single file as it will be broken up later. Abstracted.
 
 91. Reducers
+
+
+        - pure functions
+        - does no use anything outside of their scope 
+        - dosent change anything outside the function scope
+        - Only uses whats passed in.
+        - Never changes state pr actions
+
+Not Pure function: It relies on data from the outside. 
+
+        let a = 10;
+
+            const add = (b) => {
+	        return a + b;
+        }
+
+Pure Fn:  only data it uses if from inside the function (parameters passed in)
+
+        const addPure = (a, b) => {
+	        return a + b;
+        }
+
+not pure because it makes changes outside the function
+
+            let result;
+
+            const add2 = (b, b) => {
+	            result = a + b;
+            }
+
+before we were passing a reducer into the function for createing the store. Instead we create a function for the reducer and reference it in properties of store fn. This way we can facilitate multiple reducers
+
