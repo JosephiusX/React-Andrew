@@ -602,11 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*            ? now everything is removed when I only press single remove button
+*             ? now everything is removed when I only press single remove button
 
-             * seems to be working great now!!!!!!!!!!!!!!!!
+              * seems to be working great now!!!!!!!!!!!!!!!!
 
-              - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+               - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -1080,15 +1080,17 @@ follow through
 component state and redux both solve the same problem, tracking changing data.
 
         Component State (IndecisionApp):
+
 in indecision app all the data lives in the Indecision-app component, is passed down to options, option, and AddOption, and Is Passed Up to Indecision App from AddOption. This is simple and is easaly handled using component state.
 
         - its clear where the state should live
         - components are reliant on each other thus not truely reusable
         - good to use when passing a prop to a child that said child will make use of.
+
 components communicate with eachother for state data
 
-
         REDUX (ExpenxsifyApp):
+
 In the expensify-app we are going to be building, data will live in AddExpensePage to b passed down to AddExpense, and data in ExpenseDashboardPage to be passed down only to Expenses, and expence. Being more complex and having data in 2 places only needed in specific places, the ExpensifyApp is a good candidate to use REDUX to manage data(state)
 
         - theres not one clear place where the state should live
@@ -1099,8 +1101,6 @@ Redux Store is an object in which we store data. The components can choose indiv
 
 85. Setting up Redux
 
-
- 
 lookup redux.js.org
 
         - yarn add redux@3.7.2
@@ -1110,26 +1110,50 @@ lookup redux.js.org
             import {createStore} from 'redux';
 
             const store = createStore((state = {count: 0}) => {
-	            return state;
+                return state;
             });
 
             console.log(store.getState());
 
-86. Dispatching Actions - (an object that gets sent to the store)
- 
+86.   Dispatching Actions - (an object that gets sent to the store)
 
-        see redux-101.js in playground
+          see redux-101.js in playground
 
-87. Subscribing and Dynamic Actions
+87.   Subscribing and Dynamic Actions
 
 How do we watch for changes in the redux state
 
-88. ES6 Object Destructuring
+88.   ES6 Object Destructuring
 
-        - touch destructuring.js file in playground
+          - touch destructuring.js file in playground
 
-89. ES6 Array Destructuring
+89.   ES6 Array Destructuring
 
-        - also in destructureing.js
+          - also in destructureing.js
 
+90.   Refactoring and Organizing
 
+storing objects manually make it difficult when an error is made because the code wont work and there is no error message. If we call the info as a function instead, we get an error message if we misspell the function
+
+?? got lost halfway through this lesson
+** typo
+
+all caught up
+
+did more than I needed in this part of the challange:
+
+        my challange solution:
+const setCount = ({setTo = 0} = {}) => ({
+    type: 'SET',
+    setTo,
+});
+
+        class solution:
+const setCount = ({count}) => ({
+	type: 'SET',
+	count,
+});
+
+good lesson to review to see what redux looks like in a single file as it will be broken up later. Abstracted.
+
+91. Reducers

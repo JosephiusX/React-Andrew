@@ -1,14 +1,40 @@
 import {createStore} from 'redux';
 
+// Action Generators - functions that rerurn action objects
+// Actions - an object that gets sent to the store
+const incrementCount = ({incrementBy = 1} = {}) => ({
+	type: 'INCREMENT',
+	incrementBy,
+});
+
+const decrementCount = ({decrementBy = 1} = {}) => ({
+	type: 'DECREMENT',
+	decrementBy,
+});
+
+// my challange solution
+// const setCount = ({setTo = 0} = {}) => ({
+// 	type: 'SET',
+// 	setTo,
+// });
+
+const setCount = ({count}) => ({
+	type: 'SET',
+	count,
+});
+
+const resetCount = () => ({
+	type: 'RESET',
+});
+
 // Store object
 const store = createStore((state = {count: 0}, action) => {
 	switch (
 		action.type // switch instead of if else
 	) {
 		case 'INCREMENT':
-			const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
 			return {
-				count: state.count + incrementBy,
+				count: state.count + action.incrementBy,
 			};
 		case 'DECREMENT':
 			const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
@@ -17,7 +43,7 @@ const store = createStore((state = {count: 0}, action) => {
 			};
 		case 'SET':
 			return {
-				count: action.count,
+				count: (state.count = action.count),
 			};
 		case 'RESET':
 			return {
@@ -33,30 +59,34 @@ const unsubscribe = store.subscribe(() => {
 	console.log(store.getState());
 });
 
-// Actions - an object that gets sent to the store
+store.dispatch(incrementCount({incrementBy: 5}));
+store.dispatch(incrementCount());
+store.dispatch(decrementCount());
+store.dispatch(resetCount());
+store.dispatch(decrementCount({decrementBy: 8}));
+store.dispatch(setCount({count: 35}));
+
+
 
 //I'd like to increment the cont
-store.dispatch({
-	type: 'INCREMENT',
-	incrementBy: 5,
-});
+// store.dispatch({
+// 	type: 'INCREMENT',
+// 	incrementBy: 5,
+// });
 
-store.dispatch({
-	type: 'INCREMENT',
-});
+// store.dispatch({
+// 	type: 'RESET',
+// });
 
-store.dispatch({
-	type: 'RESET',
-});
 
-store.dispatch({
-	type: 'DECREMENT',
-	decrementBy: 5,
-});
+// store.dispatch({
+// 	type: 'DECREMENT',
+// 	decrementBy: 10,
+// });
 
-store.dispatch({
-	type: 'SET',
-	count: 101,
-});
+// store.dispatch({
+// 	type: 'SET',
+// 	count: 101,
+// });
 
 // I'd like to reset the count to zero
