@@ -1191,3 +1191,9 @@ before we were passing a reducer into the function for createing the store. Inst
 
 92. Working with Multiple Reducers
 
+93. ES6 Spread Operator in Reducers
+
+7:30 so far so good
+
+followed along with challange
+
