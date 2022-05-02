@@ -1189,3 +1189,5 @@ not pure because it makes changes outside the function
 
 before we were passing a reducer into the function for createing the store. Instead we create a function for the reducer and reference it in properties of store fn. This way we can facilitate multiple reducers
 
+92. Working with Multiple Reducers
+
