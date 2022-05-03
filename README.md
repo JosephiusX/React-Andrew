@@ -1199,6 +1199,8 @@ followed along with challange
 
 94. Spreading Objects
 
+FOLLOWN THROUGH CHALLANGES
+
 inside arrays we spread arrays
 inside objects we spread objects
 
@@ -1221,3 +1223,9 @@ console.log({
 	// age: 27, // age is overwritten to 27
 });
 esd
+
+95. Wrapping up Our Reducers
+
+3:40 working
+
+aced challange

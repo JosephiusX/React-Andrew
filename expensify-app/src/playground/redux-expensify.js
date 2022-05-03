@@ -32,6 +32,30 @@ const setTextFilter = (text = '') => ({
 	text,
 });
 
+// SORT_BY_AMOUNT
+const sortByAmount = (text = '') => ({
+	type: 'SORT_BY_AMOUNT',
+	text,
+});
+
+// SORT_BY_DATE
+const sortByDate = (text = '') => ({
+	type: 'SORT_BY_DATE',
+	text,
+});
+
+// SET_START_DATE
+const setStartDate = startDate => ({
+	type: 'SET_START_DATE',
+	startDate,
+});
+
+// SET_END_DATE
+const setEndDate = endDate => ({
+	type: 'SET_END_DATE',
+	endDate,
+});
+
 const expensesReducerDefaultState = [];
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
 	switch (action.type) {
@@ -68,6 +92,26 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 				...state,
 				text: action.text,
 			};
+		case 'SORT_BY_AMOUNT':
+			return {
+				...state, // spread
+				sortBy: 'amount',
+			};
+		case 'SORT_BY_DATE':
+			return {
+				...state, // spread
+				sortBy: 'date',
+			};
+		case 'SET_START_DATE':
+			return {
+				...state,
+				startDate: action.startDate,
+			};
+		case 'SET_END_DATE':
+			return {
+				...state,
+				endDate: action.endDate,
+			};
 		default:
 			return state;
 	}
@@ -86,14 +130,24 @@ store.subscribe(() => {
 	console.log(store.getState());
 });
 
-const expenseOne = store.dispatch(addExpense({discription: 'Rent', amount: 100}));
-const expenseTwo = store.dispatch(addExpense({discription: 'Coffee', amount: 300}));
+// const expenseOne = store.dispatch(addExpense({discription: 'Rent', amount: 100}));
+// const expenseTwo = store.dispatch(addExpense({discription: 'Coffee', amount: 300}));
 
-store.dispatch(removeExpense({id: expenseOne.expense.id}));
-store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
+// store.dispatch(removeExpense({id: expenseOne.expense.id}));
+// store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
 
-store.dispatch(setTextFilter('rent'));
-store.dispatch(setTextFilter());
+// //CHALLANGE
+// store.dispatch(setTextFilter('rent'));
+// store.dispatch(setTextFilter());
+
+// //CHALLANGE
+// store.dispatch(sortByAmount('Ammmmount'));
+// store.dispatch(sortByDate('40283947'));
+
+// CHALLANGE
+store.dispatch(setStartDate(125)); //	startDate 123
+store.dispatch(setStartDate()); // startDate undefined
+store.dispatch(setEndDate(1250)); // endDate 1250
 
 const demoState = {
 	expenses: [
@@ -113,14 +167,14 @@ const demoState = {
 	},
 };
 
-const user = {
-	name: 'Jen',
-	age: 24,
-};
+// const user = {
+// 	name: 'Jen',
+// 	age: 24,
+// };
 
-console.log({
-	age: 27, // not overwritten before the spreade
-	...user,
-	location: 'Philadelphia',
-	// age: 27, // age is overwritten to 27
-});
+// console.log({
+// 	age: 27, // not overwritten before the spreade
+// 	...user,
+// 	location: 'Philadelphia',
+// 	// age: 27, // age is overwritten to 27
+// });
