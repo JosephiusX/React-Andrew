@@ -1218,6 +1218,9 @@ aced challange
 
 96. Filtering Redux Data
 
-        skipped to next section
+        copied from course materials because I took time off the subject
+
+97. Sorting Redux Data
+
 
 # sec 11 React with Redux
