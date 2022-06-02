@@ -1217,3 +1217,7 @@ console.log({ age: 27, // not overwritten before the spreade ...user, location: 
 aced challange
 
 96. Filtering Redux Data
+
+        skipped to next section
+
+# sec 11 React with Redux

@@ -1,8 +1,7 @@
 import {createStore, combineReducers} from 'redux';
-import uuid from 'uuid'; // generate random id
+import uuid from 'uuid';
 
-// ADD-EXPENSE
-// to keep 'addExpense' as a pure function we
+// ADD_EXPENSE
 const addExpense = ({description = '', note = '', amount = 0, createdAt = 0} = {}) => ({
 	type: 'ADD_EXPENSE',
 	expense: {
@@ -24,24 +23,23 @@ const removeExpense = ({id} = {}) => ({
 const editExpense = (id, updates) => ({
 	type: 'EDIT_EXPENSE',
 	id,
+	updates,
 });
 
-// SET TEXT FILTER
+// SET_TEXT_FILTER
 const setTextFilter = (text = '') => ({
 	type: 'SET_TEXT_FILTER',
 	text,
 });
 
-// SORT_BY_AMOUNT
-const sortByAmount = (text = '') => ({
-	type: 'SORT_BY_AMOUNT',
-	text,
+// SORT_BY_DATE
+const sortByDate = () => ({
+	type: 'SORT_BY_DATE',
 });
 
-// SORT_BY_DATE
-const sortByDate = (text = '') => ({
-	type: 'SORT_BY_DATE',
-	text,
+// SORT_BY_AMOUNT
+const sortByAmount = () => ({
+	type: 'SORT_BY_AMOUNT',
 });
 
 // SET_START_DATE
@@ -56,11 +54,14 @@ const setEndDate = endDate => ({
 	endDate,
 });
 
+// Expenses Reducer
+
 const expensesReducerDefaultState = [];
+
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
 	switch (action.type) {
 		case 'ADD_EXPENSE':
-			return [...state, action.expense]; //state and action into new
+			return [...state, action.expense];
 		case 'REMOVE_EXPENSE':
 			return state.filter(({id}) => id !== action.id);
 		case 'EDIT_EXPENSE':
@@ -79,12 +80,15 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 	}
 };
 
+// Filters Reducer
+
 const filtersReducerDefaultState = {
 	text: '',
 	sortBy: 'date',
 	startDate: undefined,
 	endDate: undefined,
 };
+
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
 	switch (action.type) {
 		case 'SET_TEXT_FILTER':
@@ -94,12 +98,12 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 			};
 		case 'SORT_BY_AMOUNT':
 			return {
-				...state, // spread
+				...state,
 				sortBy: 'amount',
 			};
 		case 'SORT_BY_DATE':
 			return {
-				...state, // spread
+				...state,
 				sortBy: 'date',
 			};
 		case 'SET_START_DATE':
@@ -117,25 +121,19 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 	}
 };
 
-// Timestamps (miliseconds)
-// January 1st 1970 (unix epoch): starting point for all timestamps
-// 3340, 10, -203
-// time zone undependant
-
 // Get visible expenses
 const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
 	return expenses.filter(expense => {
 		const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
-		const endDateMatch = typeof startDate !== 'number' || expense.createdAt <= endDate;
-		//CHALLANGRE: figure out if expenses.description as has the text variable string inside of it
-		// convert both strings to lower case
+		const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
 		const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
 
 		return startDateMatch && endDateMatch && textMatch;
 	});
 };
-// store creation
-// combineing reducers
+
+// Store creation
+
 const store = createStore(
 	combineReducers({
 		expenses: expensesReducer,
@@ -149,29 +147,26 @@ store.subscribe(() => {
 	console.log(visibleExpenses);
 });
 
-const expenseOne = store.dispatch(addExpense({discription: 'Rent', amount: 100, createdAt: -1000}));
-const expenseTwo = store.dispatch(addExpense({discription: 'Coffee', amount: 300, createdAt: -1000}));
+const expenseOne = store.dispatch(addExpense({description: 'Rent', amount: 100, createdAt: 1000}));
+const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300, createdAt: -1000}));
 
-// store.dispatch(removeExpense({id: expenseOne.expense.id}));
-// store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
+// store.dispatch(removeExpense({ id: expenseOne.expense.id }));
+// store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 
-// //CHALLANGE
-store.dispatch(setTextFilter('e'));
+store.dispatch(setTextFilter('re'));
 // store.dispatch(setTextFilter());
 
-// //CHALLANGE
-// store.dispatch(sortByAmount('Ammmmount'));
-// store.dispatch(sortByDate('40283947'));
+// store.dispatch(sortByAmount());
+// store.dispatch(sortByDate());
 
-// CHALLANGE
-// store.dispatch(setStartDate(-2000)); //	startDate 125
+// store.dispatch(setStartDate(0)); // startDate 125
 // store.dispatch(setStartDate()); // startDate undefined
 // store.dispatch(setEndDate(999)); // endDate 1250
 
 const demoState = {
 	expenses: [
 		{
-			id: 'asdf',
+			id: 'poijasdfhwer',
 			description: 'January Rent',
 			note: 'This was the final payment for that address',
 			amount: 54500,
@@ -180,20 +175,8 @@ const demoState = {
 	],
 	filters: {
 		text: 'rent',
-		sortBy: 'amount', // date of amount
+		sortBy: 'amount', // date or amount
 		startDate: undefined,
 		endDate: undefined,
 	},
 };
-
-// const user = {
-// 	name: 'Jen',
-// 	age: 24,
-// };
-
-// console.log({
-// 	age: 27, // not overwritten before the spreade
-// 	...user,
-// 	location: 'Philadelphia',
-// 	// age: 27, // age is overwritten to 27
-// });
