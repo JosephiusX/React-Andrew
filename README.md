@@ -602,11 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*              ? now everything is removed when I only press single remove button
+*               ? now everything is removed when I only press single remove button
 
-               * seems to be working great now!!!!!!!!!!!!!!!!
+                * seems to be working great now!!!!!!!!!!!!!!!!
 
-                - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+                 - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -1216,17 +1216,17 @@ console.log({ age: 27, // not overwritten before the spreade ...user, location: 
 
 aced challange
 
-96. Filtering Redux Data
+96.   Filtering Redux Data
 
-        copied from course materials because I took time off the subject
+          copied from course materials because I took time off the subject
 
-97. Sorting Redux Data
-
+97.   Sorting Redux Data
 
 # sec 11 React with Redux
 
-98. Section Intro: Connecting React and Redux
+98.   Section Intro: Connecting React and Redux
 
-99. Organizing Redux
+99.   Organizing Redux
 
-
+          * got webpack to compile
+          > next lets see if theres still errors to troubleshoot n the console
