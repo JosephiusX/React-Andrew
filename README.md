@@ -52,7 +52,7 @@ not a bad time to add node modules to .gitignore
 
 this sets up babel so that it watches for changes in our src/app.js and translate it to our public/app.js
 
-## 3.10 Exploring ejx
+## 3.10 Exploring ejs
 
 vs code extension babel es6/es7 is helpful as well as path intelisense
 
@@ -1224,3 +1224,9 @@ aced challange
 
 
 # sec 11 React with Redux
+
+98. Section Intro: Connecting React and Redux
+
+99. Organizing Redux
+
+
