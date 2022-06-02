@@ -602,11 +602,11 @@ lookup chrome React dev tools in google, or firefox react dev tools and download
 
 -  prevState wasent set in on setState on line 18 inside 'handleDeleteOption'. I have it set now.
 
-*             ? now everything is removed when I only press single remove button
+*              ? now everything is removed when I only press single remove button
 
-              * seems to be working great now!!!!!!!!!!!!!!!!
+               * seems to be working great now!!!!!!!!!!!!!!!!
 
-               - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
+                - we never do anything in set state becides returning right away which is why we will be doing so implicidly from now on.
 
 looks like I have remove buttons' button already
 
@@ -1135,48 +1135,42 @@ How do we watch for changes in the redux state
 
 storing objects manually make it difficult when an error is made because the code wont work and there is no error message. If we call the info as a function instead, we get an error message if we misspell the function
 
-?? got lost halfway through this lesson
-** typo
+?? got lost halfway through this lesson \*\* typo
 
 all caught up
 
 did more than I needed in this part of the challange:
 
         my challange solution:
-const setCount = ({setTo = 0} = {}) => ({
-    type: 'SET',
-    setTo,
-});
+
+const setCount = ({setTo = 0} = {}) => ({ type: 'SET', setTo, });
 
         class solution:
-const setCount = ({count}) => ({
-	type: 'SET',
-	count,
-});
+
+const setCount = ({count}) => ({ type: 'SET', count, });
 
 good lesson to review to see what redux looks like in a single file as it will be broken up later. Abstracted.
 
-91. Reducers
+91.   Reducers
 
+          - pure functions
+          - does no use anything outside of their scope
+          - dosent change anything outside the function scope
+          - Only uses whats passed in.
+          - Never changes state pr actions
 
-        - pure functions
-        - does no use anything outside of their scope 
-        - dosent change anything outside the function scope
-        - Only uses whats passed in.
-        - Never changes state pr actions
-
-Not Pure function: It relies on data from the outside. 
+Not Pure function: It relies on data from the outside.
 
         let a = 10;
 
             const add = (b) => {
-	        return a + b;
+            return a + b;
         }
 
-Pure Fn:  only data it uses if from inside the function (parameters passed in)
+Pure Fn: only data it uses if from inside the function (parameters passed in)
 
         const addPure = (a, b) => {
-	        return a + b;
+            return a + b;
         }
 
 not pure because it makes changes outside the function
@@ -1184,7 +1178,7 @@ not pure because it makes changes outside the function
             let result;
 
             const add2 = (b, b) => {
-	            result = a + b;
+                result = a + b;
             }
 
 before we were passing a reducer into the function for createing the store. Instead we create a function for the reducer and reference it in properties of store fn. This way we can facilitate multiple reducers
@@ -1201,31 +1195,25 @@ followed along with challange
 
 FOLLOWN THROUGH CHALLANGES
 
-inside arrays we spread arrays
-inside objects we spread objects
+inside arrays we spread arrays inside objects we spread objects
 
 for objects we need to customize babel to support this syntax
 
-lookup the plugin in google:
-    babel object spread operator
+lookup the plugin in google: babel object spread operator
 
 obj spread example:
 
         const user = {
-	        name: 'Jen',
-	        age: 24,
+            name: 'Jen',
+            age: 24,
         };
 
-console.log({
-	age: 27, // not overwritten before the spreade
-	...user,
-	location: 'Philadelphia',
-	// age: 27, // age is overwritten to 27
-});
-esd
+console.log({ age: 27, // not overwritten before the spreade ...user, location: 'Philadelphia', // age: 27, // age is overwritten to 27 }); esd
 
 95. Wrapping up Our Reducers
 
 3:40 working
 
 aced challange
+
+96. Filtering Redux Data
