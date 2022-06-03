@@ -1230,3 +1230,6 @@ aced challange
 
           * got webpack to compile
           > next lets see if theres still errors to troubleshoot n the console
+
+OMG.  8 hours to rediscover im dyslexic:
+    mispelled filters in the import statement
