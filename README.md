@@ -1233,3 +1233,10 @@ aced challange
 
 OMG.  8 hours to rediscover im dyslexic:
     mispelled filters in the import statement
+
+100. The Higher Order Component
+
+CHALLANGE: requireAuthentication
+
+        
+
