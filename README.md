@@ -1244,3 +1244,5 @@ https://github.com/reduxjs/react-redux
 
         ? getting an error recomending i remove my package.lock json files and only use yarn or npm but not both as they can conflict
         > removeing the lock file and refraining from using npm to download packages in favor of yarn , which i do use npm to aquire.
+
+we setup provider in the root of our application which let us define a store that we can provide to all of our components (step 1]) next we created higher order function
