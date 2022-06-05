@@ -1246,3 +1246,9 @@ https://github.com/reduxjs/react-redux
         > removeing the lock file and refraining from using npm to download packages in favor of yarn , which i do use npm to aquire.
 
 we setup provider in the root of our application which let us define a store that we can provide to all of our components (step 1]) next we created higher order function
+
+102. Rendering Individual Expenses
+
+        CHALLANGE:
+        Export a stateless functional component
+        description, amount, createdAt
